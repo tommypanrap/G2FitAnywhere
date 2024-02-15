@@ -12,6 +12,7 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
 import com.fitanywhere.social.model.SocialPostVO;
+import com.fitanywhere.user.model.UserVO;
 import com.fitanywhere.util.HibernateUtil;
 
 public class SocialPostDAOImpl implements SocialPostDAO{
@@ -47,14 +48,16 @@ public class SocialPostDAOImpl implements SocialPostDAO{
 		getSession().update(entity);
 	}
 	
-	@Override
-	public SocialPostVO findByPrimaryKey(Integer spid) {
-		return getSession().get(SocialPostVO.class, spid);
-	}
 	
 	@Override
 	public List<SocialPostVO> getAll() {
 		return getSession().createQuery("from social_post", SocialPostVO.class).list();
+	}
+
+	@Override
+	public SocialPostVO findByPrimaryKey(UserVO user) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 	
 }

@@ -17,6 +17,12 @@
 		
 		<mapping class="com.fitanywhere.user.model.UserVO"/>
 		<mapping class="com.fitanywhere.social.model.SocialPostVO"/>
+		<mapping class="com.fitanywhere.ad.model.AdVO"/>
+		<mapping class="com.fitanywhere.adcarouselorder.model.AdCarouselOrderVO"/>
+		<mapping class="com.fitanywhere.addate.model.AdDateVO"/>
+		<mapping class="com.fitanywhere.adrecommandorder.model.AdRecommandOrderVO"/>
+		<mapping class="com.fitanywhere.course.model.CourseVO"/>
+		<mapping class="com.fitanywhere.user.model.UserVO"/>
 		
 	</session-factory>
 </hibernate-configuration>
