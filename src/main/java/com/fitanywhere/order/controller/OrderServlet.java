@@ -84,7 +84,7 @@ public class OrderServlet extends HttpServlet {
 			}
 			/*************************** 3.查詢完成,準備轉交(Send the Success view) *************/
 			req.setAttribute("orderVO", orderVO);
-			String url = "/order/listOneOrder.jsp";
+			String url = "/order/list_one_order.jsp";
 			RequestDispatcher successView = req.getRequestDispatcher(url);
 			successView.forward(req, resp);
 		}
@@ -210,7 +210,7 @@ public class OrderServlet extends HttpServlet {
 			/*************************** 3.修改完成,準備轉交(Send the Success view) *************/
 			// 資料庫update成功後,正確的的empVO物件,存入req
 			req.setAttribute("orderVO", orderVO);
-			String url = "/order/listOneOrder.jsp";
+			String url = "/order/list_one_order.jsp";
 
 			// 修改成功後,轉交listOneEmp.jsp
 			RequestDispatcher successView = req.getRequestDispatcher(url);
@@ -279,7 +279,7 @@ public class OrderServlet extends HttpServlet {
 			if (!errorMsgs.isEmpty()) {
 				// 含有輸入格式錯誤的empVO物件,也存入req
 				req.setAttribute("orderVO", orderVO);
-				RequestDispatcher failureView = req.getRequestDispatcher("/order/addOrder.jsp");
+				RequestDispatcher failureView = req.getRequestDispatcher("/order/add_order.jsp");
 				failureView.forward(req, resp);
 				return;
 			}
@@ -289,7 +289,7 @@ public class OrderServlet extends HttpServlet {
 			
 			
 			/***************************3.新增完成,準備轉交(Send the Success view)***********/
-			String url = "/order/listAllOrder.jsp";
+			String url = "/order/list_all_order.jsp";
 			RequestDispatcher successView = req.getRequestDispatcher(url);
 			successView.forward(req, resp);
 		}
@@ -308,7 +308,7 @@ public class OrderServlet extends HttpServlet {
 			OrderService odSvc = new OrderService();
 			odSvc.deleteOrder(odId);
 			/***************************3.刪除完成,準備轉交(Send the Success view)***********/								
-			String url = "/order/listAllOrder.jsp";
+			String url = "/order/list_all_order.jsp";
 			RequestDispatcher successView = req.getRequestDispatcher(url);
 			successView.forward(req, resp);
 			

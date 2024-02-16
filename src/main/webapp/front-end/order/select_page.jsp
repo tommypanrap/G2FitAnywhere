@@ -54,7 +54,7 @@ h4 {
 	</c:if>
 
 	<ul>
-		<li><a href='listAllOrder.jsp'>List</a> all Orders. <br>
+		<li><a href='list_all_order.jsp'>List</a> all Orders. <br>
 		<br></li>
 
 
@@ -88,7 +88,7 @@ h4 {
 
 	<h3>課程訂單管理</h3>
 	<ul>
-		<li><a href='addOrder.jsp'>Add</a> a new Order.</li>
+		<li><a href='add_order.jsp'>Add</a> a new Order.</li>
 	</ul>
 
 </body>
