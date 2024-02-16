@@ -58,16 +58,8 @@
     </FORM>
   </li>
   
-  <!-- <li>
-    <FORM METHOD="post" ACTION="user.do" name="form1">
-        <b>輸入用戶ID (如101):</b>
-        <input type="text" name="uId">
-        <input type="hidden" name="action" value="getOneForDisplay">
-        <input type="submit" value="送出" onclick="fun1()">  <h4>(資料格式驗證  by Java Script).</h4> 
-    </FORM>
-  </li> -->
 
-<%--   <jsp:useBean id="coursehibernate" scope="page" class="com.fitanywhere.course.model.CourseHibernate" /> --%>
+<jsp:useBean id="coursehibernate" scope="page" class="com.fitanywhere.course.model.CourseHibernate" />
    
   <li>
      <FORM METHOD="post" ACTION="course.do" >

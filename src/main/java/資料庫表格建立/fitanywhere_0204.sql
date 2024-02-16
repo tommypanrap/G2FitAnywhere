@@ -29,37 +29,39 @@ CREATE TABLE  discount(
     INSERT INTO discount (dc_id, dc_start, dc_end, dc_project, dc_status)VALUES(3, '2023-07-20 00:00:00', '2023-07-31 23:59:59', 3, 1);
 
 -- 用戶(user)
-create table user(
-	u_id int primary key,
-    mood_id int,
-    foreign key (mood_id) references mood (mood_id),
-    u_nickname varchar(20),
-    u_name varchar(20),
-    u_mail varchar(50),
-    u_password varchar(20),
-    u_phone varchar(20),
-    u_verified int,
-    u_coach int,
-    u_gender varchar(5),
-    u_age int,
-    u_headshot longblob,
-    u_birth date,
-    u_status int,
-    c_intro varchar(50)
-    );
-    insert into user(u_id,mood_id,u_nickname,u_name ,u_mail,u_password ,u_phone,u_verified,u_coach,u_gender,u_age,u_headshot,u_birth,u_status,c_intro)values(101, 1, 'user1_nick', 'User One', 'user1@example.com', '1234', '123456789', 1, 0, '男', 25, NULL, '1998-05-15', 1, NULL);
-    insert into user(u_id,mood_id,u_nickname,u_name ,u_mail,u_password ,u_phone,u_verified,u_coach,u_gender,u_age,u_headshot,u_birth,u_status,c_intro)values(102, 3, 'user2_nick', 'User Two', 'user2@example.com', '123456', '987654321', 1, 1, '女', 30, NULL, '1993-08-20', 1, 'Certified Coach');
-    insert into user(u_id,mood_id,u_nickname,u_name ,u_mail,u_password ,u_phone,u_verified,u_coach,u_gender,u_age,u_headshot,u_birth,u_status,c_intro)values(103, 2, 'user3_nick', 'User Three', 'user3@example.com','12345', '654321789', 0, 0, '男', 22, NULL, '2000-02-10', 1, NULL);
+CREATE TABLE user (
+    u_id INT AUTO_INCREMENT PRIMARY KEY,
+    mood_id INT,
+    FOREIGN KEY (mood_id) REFERENCES mood (mood_id),
+    u_nickname VARCHAR(12),
+    u_name VARCHAR(60),
+    u_mail VARCHAR(50),
+    u_password VARCHAR(255),
+    u_phone VARCHAR(10),
+    u_verified INT,
+    u_coach INT,
+    u_gender INT,
+    u_headshot LONGBLOB,
+    u_birth DATE,
+    u_status INT,
+    u_registerdate DATE,
+    c_intro VARCHAR(120)
+) AUTO_INCREMENT=10001;
+
+--  User One/User Two/User Three的密碼都是"a123456" (因為密碼加密才入DB)
+    insert into user(mood_id,u_nickname,u_name ,u_mail,u_password ,u_phone,u_verified,u_coach,u_gender,u_headshot,u_birth,u_status,c_intro)values( 1, 'user1_nick', 'User One', 'user1@example.com', '$2a$10$edAP3ONov1fDuPhP9BZbhOiVRqJQgmsCoVanmygq2ucVlBVISeDEO', '123456789', 1, 0, 1,NULL, '1998-05-15', 1, NULL);
+    insert into user(mood_id,u_nickname,u_name ,u_mail,u_password ,u_phone,u_verified,u_coach,u_gender,u_headshot,u_birth,u_status,c_intro)values( 3, 'user2_nick', 'User Two', 'user2@example.com', '$2a$10$edAP3ONov1fDuPhP9BZbhOiVRqJQgmsCoVanmygq2ucVlBVISeDEO', '987654321', 1, 1, 0,NULL, '1993-08-20', 1, 'Certified Coach');
+    insert into user(mood_id,u_nickname,u_name ,u_mail,u_password ,u_phone,u_verified,u_coach,u_gender,u_headshot,u_birth,u_status,c_intro)values( 2, 'user3_nick', 'User Three', 'user3@example.com','$2a$10$edAP3ONov1fDuPhP9BZbhOiVRqJQgmsCoVanmygq2ucVlBVISeDEO', '654321789', 0, 0, 0,NULL, '2000-02-10', 1, NULL);
     
 -- 課程訂單(order)
 CREATE TABLE `order`(
     od_id INT AUTO_INCREMENT PRIMARY KEY,
-    od_create_date DATETIME,
+    od_create_date DATETIME DEFAULT NOW(),
     u_id INT,
     CONSTRAINT fk_order_u_id FOREIGN KEY (u_id) REFERENCES user(u_id),
     dc_id INT,
     CONSTRAINT fk_order_dc_id FOREIGN KEY (dc_id) REFERENCES discount(dc_id),
-    od_end_date DATETIME,
+    od_end_date DATETIME ,
     od_status INT,
     od_price INT
 );
@@ -75,6 +77,7 @@ create table course(
     foreign key (u_id) references user (u_id),
     cr_class varchar(20),
     cr_state int,
+    cr_title varchar(50),
     cr_subtitle varchar(50),
     cr_intro LONGTEXT,
     cr_cover longblob,
@@ -92,9 +95,10 @@ create table course(
     cr_cong LONGTEXT,
     cr_level VARCHAR(10)
     );
-    insert into course(cr_id,u_id,cr_class ,cr_state ,cr_subtitle ,cr_intro ,cr_cover ,cr_price ,cr_create_date ,cr_edit_date ,cr_cm_quan ,cr_tot_star ,cr_purpose_1 ,cr_purpose_2 ,cr_purpose_3 ,cr_pre,cr_target_1 ,cr_hello_msg ,cr_cong ,cr_level )values(1, 101, '健身', 1, 'Introduction to Programming', 'This course covers the basics of programming.', NULL, 29, '2023-01-01 08:00:00', '2023-01-10 12:30:00', 50, 4, 'Learn Programming', 'Build Web Apps', 'Data Analysis', NULL, 'Beginners', NULL, NULL, 'Normal');
-    insert into course(cr_id,u_id,cr_class ,cr_state ,cr_subtitle ,cr_intro ,cr_cover ,cr_price ,cr_create_date ,cr_edit_date ,cr_cm_quan ,cr_tot_star ,cr_purpose_1 ,cr_purpose_2 ,cr_purpose_3 ,cr_pre,cr_target_1 ,cr_hello_msg ,cr_cong ,cr_level )values(2, 102, '有氧', 1, 'Graphic Design Fundamentals', 'Explore the world of graphic design with hands-on projects.', NULL, 49, '2023-02-15 10:30:00', '2023-02-28 15:45:00', 30, 5, 'Learn Graphic Design', 'Create Stunning Logos', 'Illustration Techniques', NULL, 'Design Enthusiasts', NULL, NULL, 'Normal');
-    insert into course(cr_id,u_id,cr_class ,cr_state ,cr_subtitle ,cr_intro ,cr_cover ,cr_price ,cr_create_date ,cr_edit_date ,cr_cm_quan ,cr_tot_star ,cr_purpose_1 ,cr_purpose_2 ,cr_purpose_3 ,cr_pre,cr_target_1 ,cr_hello_msg ,cr_cong ,cr_level )values(3, 103, '減脂', 1, 'Healthy Cooking Essentials', 'Learn to cook delicious and healthy meals for yourself and your loved ones.', NULL, 39, '2023-03-20 09:15:00', '2023-03-31 14:00:00', 25, 4, 'Healthy Cooking', 'Nutrition Essentials', 'Meal Planning', 'Basic Cooking Skills', 'Health Enthusiasts', NULL, NULL, 'Beginner');
+    
+    insert into course(cr_id,u_id,cr_class ,cr_state ,cr_title ,cr_subtitle ,cr_intro ,cr_cover ,cr_price ,cr_create_date ,cr_edit_date ,cr_cm_quan ,cr_tot_star ,cr_purpose_1 ,cr_purpose_2 ,cr_purpose_3 ,cr_pre,cr_target_1 ,cr_hello_msg ,cr_cong ,cr_level )values(1, 101, '健身', 1, '三十天快速減肥', 'Introduction to Programming', 'This course covers the basics of programming.', NULL, 29, '2023-01-01 08:00:00', '2023-01-10 12:30:00', 50, 4, 'Learn Programming', 'Build Web Apps', 'Data Analysis', NULL, 'Beginners', NULL, NULL, 'Normal');
+    insert into course(cr_id,u_id,cr_class ,cr_state ,cr_title ,cr_subtitle ,cr_intro ,cr_cover ,cr_price ,cr_create_date ,cr_edit_date ,cr_cm_quan ,cr_tot_star ,cr_purpose_1 ,cr_purpose_2 ,cr_purpose_3 ,cr_pre,cr_target_1 ,cr_hello_msg ,cr_cong ,cr_level )values(2, 102, '有氧', 1, '有氧八週', 'Graphic Design Fundamentals', 'Explore the world of graphic design with hands-on projects.', NULL, 49, '2023-02-15 10:30:00', '2023-02-28 15:45:00', 30, 5, 'Learn Graphic Design', 'Create Stunning Logos', 'Illustration Techniques', NULL, 'Design Enthusiasts', NULL, NULL, 'Normal');
+    insert into course(cr_id,u_id,cr_class ,cr_state ,cr_title ,cr_subtitle ,cr_intro ,cr_cover ,cr_price ,cr_create_date ,cr_edit_date ,cr_cm_quan ,cr_tot_star ,cr_purpose_1 ,cr_purpose_2 ,cr_purpose_3 ,cr_pre,cr_target_1 ,cr_hello_msg ,cr_cong ,cr_level )values(3, 103, '減脂', 1, '魔鬼減脂肪', 'Healthy Cooking Essentials', 'Learn to cook delicious and healthy meals for yourself and your loved ones.', NULL, 39, '2023-03-20 09:15:00', '2023-03-31 14:00:00', 25, 4, 'Healthy Cooking', 'Nutrition Essentials', 'Meal Planning', 'Basic Cooking Skills', 'Health Enthusiasts', NULL, NULL, 'Beginner');
     
 -- 用戶收藏課程清單(user_collect_list)
 CREATE TABLE user_collect_list (
@@ -167,13 +171,14 @@ create table news(
 
 -- 管理員(administrator)
 create table administrator(
-	account varchar(50),
-    password int,
-    permission int
-);
-	insert into administrator (account , password ,permission)values('andy', 111 ,1);
-    insert into administrator (account , password ,permission)values('tommy',111 ,1);
-    insert into administrator (account , password ,permission)values('joy', 111 ,1);
+ 	am_id int,
+ 	am_name varchar(60),
+    am_password int(255),
+    am_level int
+	)AUTO_INCREMENT=101;
+ 	insert into administrator (am_name , am_password ,am_level)values('andy', 111 ,1);
+    insert into administrator (am_name , am_password ,am_level)values('tommy',111 ,1);
+    insert into administrator (am_name , am_password ,am_level)values('joy', 111 ,1);
     
 -- 廣告方案(ad)
 CREATE TABLE ad (
@@ -206,13 +211,13 @@ CREATE TABLE ad_carousel_order (
     CONSTRAINT fk_ad_carousel_order_u_id FOREIGN KEY (u_id) REFERENCES user(u_id),
     cr_id int,
     CONSTRAINT fk_ad_carousel_order_cr_id FOREIGN KEY (cr_id) REFERENCES course(cr_id),
-    adc_start_date DATETIME,
-    adc_end_date DATETIME,
+    adc_start_date DATETIME DEFAULT CURRENT_TIMESTAMP,
+    adc_end_date DATETIME DEFAULT CURRENT_TIMESTAMP,
     adc_total_price INT,
     adc_update_pic LONGBLOB,
     adc_status INT,
-    adc_order_enddate DATETIME
-); 
+    adc_order_enddate DATETIME DEFAULT CURRENT_TIMESTAMP
+);
 	INSERT INTO ad_carousel_order(ad_id, u_id, cr_id, adc_start_date, adc_end_date, adc_total_price, adc_update_pic, adc_status, adc_order_enddate)VALUES(1, 101, 1, '2023-01-01 08:00:00', '2023-01-10 12:30:00', 500, NULL, 1, '2023-01-15 10:00:00');
     INSERT INTO ad_carousel_order(ad_id, u_id, cr_id, adc_start_date, adc_end_date, adc_total_price, adc_update_pic, adc_status, adc_order_enddate)VALUES(2, 102, 1, '2023-02-15 10:30:00', '2023-02-28 15:45:00', 700, NULL, 1, '2023-03-05 14:30:00');
     INSERT INTO ad_carousel_order(ad_id, u_id, cr_id, adc_start_date, adc_end_date, adc_total_price, adc_update_pic, adc_status, adc_order_enddate)VALUES(3, 103, 1, '2023-03-20 09:15:00', '2023-03-31 14:00:00', 600, NULL, 1, '2023-04-02 11:45:00');
@@ -272,7 +277,7 @@ CREATE TABLE social_reply (
 CREATE TABLE opinion (
     op_id INT PRIMARY KEY,
     u_id INT,
-    op_title VARCHAR(50),
+    op_title VARCHAR(150),
     op_content LONGTEXT,
     op_send_time DATETIME,
     op_reply_content LONGTEXT,
@@ -280,9 +285,9 @@ CREATE TABLE opinion (
     op_status INT,
     FOREIGN KEY (u_id) REFERENCES user(u_id) -- 替换为实际的用户表和列名
 );
-	INSERT INTO opinion (op_id, u_id, op_title, op_content, op_send_time, op_reply_content, op_reply_time, op_status)VALUES(1, 101, 'Feedback on App Features', 'I really like the app, but it would be great if we could have more features for tracking fitness progress.', '2023-01-05 09:45:00', 'Thank you for your feedback! We appreciate your suggestion and will consider it for future updates.', '2023-01-06 10:30:00', 1);
-    INSERT INTO opinion (op_id, u_id, op_title, op_content, op_send_time, op_reply_content, op_reply_time, op_status)VALUES(2, 102, 'Bug Report', 'Encountered a bug when trying to log in. The error message says "Invalid credentials," but I am sure I am using the correct username and password.', '2023-02-20 15:20:00', 'We apologize for the inconvenience. Our team is investigating the issue and will provide a fix as soon as possible.', '2023-02-21 11:15:00', 1);
-	INSERT INTO opinion (op_id, u_id, op_title, op_content, op_send_time, op_reply_content, op_reply_time, op_status)VALUES(3, 103, 'App Improvement', 'The app is fantastic, but it would be even better with a dark mode. Many users prefer dark themes for better readability at night.', '2023-03-25 13:10:00', 'Thank you for your suggestion! Weve added it to our feature requests list and will explore the possibility of implementing dark mode in future updates.', '2023-03-26 09:55:00', 1);
+ 	INSERT INTO opinion (op_id, u_id, op_title, op_content, op_send_time, op_reply_content, op_reply_time, op_status)VALUES(1, 10001, 'Feedback on App Features', 'I really like the app, but it would be great if we could have more features for tracking fitness progress.', '2023-01-05 09:45:00', 'Thank you for your feedback! We appreciate your suggestion and will consider it for future updates.', '2023-01-06 10:30:00', 1);
+    INSERT INTO opinion (op_id, u_id, op_title, op_content, op_send_time, op_reply_content, op_reply_time, op_status)VALUES(2, 10002, 'Bug Report', 'Encountered a bug when trying to log in. The error message says "Invalid credentials," but I am sure I am using the correct username and password.', '2023-02-20 15:20:00', 'We apologize for the inconvenience. Our team is investigating the issue and will provide a fix as soon as possible.', '2023-02-21 11:15:00', 1);
+	INSERT INTO opinion (op_id, u_id, op_title, op_content, op_send_time, op_reply_content, op_reply_time, op_status)VALUES(3, 10003, 'App Improvement', 'The app is fantastic, but it would be even better with a dark mode. Many users prefer dark themes for better readability at night.', '2023-03-25 13:10:00', 'Thank you for your suggestion! Weve added it to our feature requests list and will explore the possibility of implementing dark mode in future updates.', '2023-03-26 09:55:00', 1);
 
 -- 訂閱table(subscribe)
 CREATE TABLE subscribe (
