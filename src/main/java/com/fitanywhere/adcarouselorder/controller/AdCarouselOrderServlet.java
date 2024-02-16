@@ -45,7 +45,7 @@ public class AdCarouselOrderServlet extends HttpServlet {
 			HttpSession session = req.getSession();
 			session.setAttribute("list", list);
 
-			String url = "/Adc/listAllAdc.jsp";
+			String url = "/Adc/list_all_adc.jsp";
 			RequestDispatcher success = req.getRequestDispatcher(url);
 			success.forward(req, res);
 			return;
@@ -107,7 +107,7 @@ public class AdCarouselOrderServlet extends HttpServlet {
 			}
 
 			// 查詢完成
-			String url = "/Adc/listOneAdc.jsp";
+			String url = "/Adc/list_one_adc.jsp";
 			RequestDispatcher successView = req.getRequestDispatcher(url);
 			successView.forward(req, res);
 		}
@@ -127,7 +127,7 @@ public class AdCarouselOrderServlet extends HttpServlet {
 					+ adcVO.getAdcUpdatePic() + "&adcStatus=" + adcVO.getAdcStatus() + "&adcOrderEnddate="
 					+ adcVO.getAdcOrderEnddate();
 
-			String url = "/Adc/updateAdcInput.jsp" + param;
+			String url = "/Adc/update_adc_input.jsp" + param;
 			System.out.println(url);
 			RequestDispatcher successView = req.getRequestDispatcher(url);// 成功轉交 updateAdcinput.jsp
 
@@ -180,7 +180,7 @@ public class AdCarouselOrderServlet extends HttpServlet {
 			}
 
 			if (!errorMsgs.isEmpty()) {
-				RequestDispatcher failureView = req.getRequestDispatcher("/Adc/updateAdcInput.jsp");
+				RequestDispatcher failureView = req.getRequestDispatcher("/Adc/update_adc_input.jsp");
 				failureView.forward(req, res);
 				return;
 			}
@@ -197,7 +197,7 @@ public class AdCarouselOrderServlet extends HttpServlet {
 			adcSvc.update(adcVO);
 
 			req.setAttribute("adcVO", adcVO);
-			String url = "/Adc/listAllAdc.jsp";
+			String url = "/Adc/list_all_adc.jsp";
 
 			RequestDispatcher successViwe = req.getRequestDispatcher(url);
 			successViwe.forward(req, res);
@@ -245,7 +245,7 @@ public class AdCarouselOrderServlet extends HttpServlet {
 			
 			// 如果有錯誤，轉發回 addAdc.jsp 顯示錯誤訊息
 			if (!errorMsgs.isEmpty()) {
-				RequestDispatcher failureView = req.getRequestDispatcher("/Adc/addAdc.jsp");
+				RequestDispatcher failureView = req.getRequestDispatcher("/Adc/add_adc.jsp");
 				failureView.forward(req, res);
 				return;
 			}
@@ -272,7 +272,7 @@ public class AdCarouselOrderServlet extends HttpServlet {
 
 			if (!errorMsgs.isEmpty()) {
 				req.setAttribute("adcVO", adcVO);
-				RequestDispatcher failureView = req.getRequestDispatcher("/Adc/addAdc.jsp");
+				RequestDispatcher failureView = req.getRequestDispatcher("/Adc/add_adc.jsp");
 				failureView.forward(req, res);
 				return;
 			}
@@ -280,7 +280,7 @@ public class AdCarouselOrderServlet extends HttpServlet {
 //			adcVO = adcSvc.insert( adcStartDate, adcEndDate, adcTotalPrice, adcUpdatePic, adcStatus,
 //					adcOrderEnddate);
 			
-			String url = "/Adc/listAllAdc.jsp";
+			String url = "/Adc/list_all_adc.jsp";
 			RequestDispatcher successView = req.getRequestDispatcher(url); // 新增成功後轉交listAllAdc.jsp
 			successView.forward(req, res);
 		}
@@ -296,7 +296,7 @@ public class AdCarouselOrderServlet extends HttpServlet {
 			AdCarouselOrderService adcSvc = new AdCarouselOrderService();
 			adcSvc.delete(adcId);
 
-			String url = "/Adc/listAllAdc.jsp";
+			String url = "/Adc/list_all_adc.jsp";
 			RequestDispatcher successView = req.getRequestDispatcher(url);// 刪除成功後,轉交回送出刪除的來源網頁
 			successView.forward(req, res);
 		}
