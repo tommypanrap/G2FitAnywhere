@@ -363,10 +363,10 @@ public class CourseServlet extends HttpServlet {
 
 			Integer crPrice;
 			crPrice = Integer.valueOf(req.getParameter("crPrice"));
-//			try {
-//			} catch (NumberFormatException e) {
-//				errorMsgs.put("uVerified", "請勿空白");
-//			}
+			try {
+			} catch (Exception e) {
+				errorMsgs.add("價錢請勿空白");
+			}
 
 			long currentTimeMillis = System.currentTimeMillis();
 

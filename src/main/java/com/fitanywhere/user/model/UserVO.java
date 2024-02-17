@@ -50,11 +50,11 @@ public class UserVO {
 //	0 = 一般會員; 1 = 教練;
 
 	@Column(name = "u_gender")
-	private String uGender;
+	private Integer uGender;
 //	0 = 男; 1 = 女; 2 = 其他;
 	
-	@Column(name = "u_age")
-	private Integer uAge;
+//	@Column(name = "u_age")
+//	private Integer uAge;
 
 	@Column(name="u_headshot",columnDefinition = "longblob")
 	private byte[] uHeadshot;
@@ -149,21 +149,21 @@ public class UserVO {
 		this.uCoach = uCoach;
 	}
 
-	public String getuGender() {
+	public Integer getuGender() {
 		return uGender;
 	}
 
-	public void setuGender(String uGender) {
+	public void setuGender(Integer uGender) {
 		this.uGender = uGender;
 	}
 
-	public Integer getuAge() {
-		return uAge;
-	}
-
-	public void setuAge(Integer uAge) {
-		this.uAge = uAge;
-	}
+//	public Integer getuAge() {
+//		return uAge;
+//	}
+//
+//	public void setuAge(Integer uAge) {
+//		this.uAge = uAge;
+//	}
 
 	public byte[] getuHeadshot() {
 		return uHeadshot;
@@ -198,7 +198,7 @@ public class UserVO {
 	}
 
 	public UserVO(Integer uId, Integer moodId, String uNickname, String uName, String uMail, String uPassword,
-			String uPhone, Integer uVerified, Integer uCoach, String uGender, Integer uAge, byte[] uHeadshot,
+			String uPhone, Integer uVerified, Integer uCoach, Integer uGender, Integer uAge, byte[] uHeadshot,
 			Date uBirth, Integer uStatus, String cIntro) {
 		super();
 		this.uId = uId;
@@ -211,7 +211,6 @@ public class UserVO {
 		this.uVerified = uVerified;
 		this.uCoach = uCoach;
 		this.uGender = uGender;
-		this.uAge = uAge;
 		this.uHeadshot = uHeadshot;
 		this.uBirth = uBirth;
 		this.uStatus = uStatus;
@@ -222,7 +221,7 @@ public class UserVO {
 	public String toString() {
 		return "UserVO [uId=" + uId + ", moodId=" + moodId + ", uNickname=" + uNickname + ", uName=" + uName
 				+ ", uMail=" + uMail + ", uPassword=" + uPassword + ", uPhone=" + uPhone + ", uVerified=" + uVerified
-				+ ", uCoach=" + uCoach + ", uGender=" + uGender + ", uAge=" + uAge + ", uHeadshot="
+				+ ", uCoach=" + uCoach + ", uGender=" + uGender + ", uAge=" + ", uHeadshot="
 				+ Arrays.toString(uHeadshot) + ", uBirth=" + uBirth + ", uStatus=" + uStatus + ", cIntro=" + cIntro
 				+ "]";
 	}

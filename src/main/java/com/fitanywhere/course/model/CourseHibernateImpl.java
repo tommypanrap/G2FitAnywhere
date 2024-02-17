@@ -9,24 +9,24 @@ import com.fitanywhere.util.HibernateUtil;
 
 public class CourseHibernateImpl implements CourseHibernate {
 
-	public static void main(String[] args) {
-		SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
-		Session session = sessionFactory.getCurrentSession();
-
-		List<CourseVO> list = null;
-		try {
-			session.beginTransaction();
-			list = session.createQuery("from course", CourseVO.class).list();
-			session.getTransaction().commit();
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-			if (session.getTransaction() != null) {
-				session.getTransaction().rollback();
-			}
-		}
-		System.out.println(list.toString());
-	}
+//	public static void main(String[] args) {
+//		SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
+//		Session session = sessionFactory.getCurrentSession();
+//
+//		List<CourseVO> list = null;
+//		try {
+//			session.beginTransaction();
+//			list = session.createQuery("from course", CourseVO.class).list();
+//			session.getTransaction().commit();
+//		} catch (Exception e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//			if (session.getTransaction() != null) {
+//				session.getTransaction().rollback();
+//			}
+//		}
+//		System.out.println(list.toString());
+//	}
 	
 	@Override
 	public Integer insert(CourseVO courseVO) {
