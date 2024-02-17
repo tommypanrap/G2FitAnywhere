@@ -47,7 +47,7 @@
 </c:if>
 
 <ul>
-  <li><a href='listAllCourse.jsp'>List</a> all Course    <h4>(byDAO).         </h4></li>
+  <li><a href='list_all_course.jsp'>List</a> all Course   <h4>         </h4></li>
   
  <li>
     <FORM METHOD="post" ACTION="course.do" >
@@ -59,7 +59,7 @@
   </li>
   
 
-<jsp:useBean id="coursehibernate" scope="page" class="com.fitanywhere.course.model.CourseHibernate" />
+<jsp:useBean id="coursehibernate" scope="page" class="com.fitanywhere.course.model.CourseHibernateImpl" />
    
   <li>
      <FORM METHOD="post" ACTION="course.do" >
@@ -86,6 +86,12 @@
        <input type="submit" value="送出">
      </FORM>
   </li>
+</ul>
+
+<h3>課程管理</h3>
+
+<ul>
+  <li><a href='add_course.jsp'>新增課程測試</a></li>
 </ul>
 
 

@@ -65,14 +65,14 @@ CREATE TABLE `order`(
     od_status INT,
     od_price INT
 );
-	INSERT INTO `order` (od_id, od_create_date, u_id, od_end_date, od_status, od_price, dc_id)VALUES(1, '2023-08-01 10:00:00', 101, '2023-08-02 15:30:00', 1, 50, 1);
-	INSERT INTO `order` (od_id, od_create_date, u_id, od_end_date, od_status, od_price, dc_id)VALUES(2, '2023-08-03 12:30:00', 102, '2023-08-04 18:45:00', 1, 70, 2);
-	INSERT INTO `order` (od_id, od_create_date, u_id, od_end_date, od_status, od_price, dc_id)VALUES(3, '2023-08-05 14:45:00', 103, '2023-08-06 20:00:00', 1, 90, 3);
+	INSERT INTO `order` (od_id, od_create_date, u_id, od_end_date, od_status, od_price, dc_id)VALUES(1, '2023-08-01 10:00:00', 10001, '2023-08-02 15:30:00', 1, 50, 1);
+	INSERT INTO `order` (od_id, od_create_date, u_id, od_end_date, od_status, od_price, dc_id)VALUES(2, '2023-08-03 12:30:00', 10002, '2023-08-04 18:45:00', 1, 70, 2);
+	INSERT INTO `order` (od_id, od_create_date, u_id, od_end_date, od_status, od_price, dc_id)VALUES(3, '2023-08-05 14:45:00', 10003, '2023-08-06 20:00:00', 1, 90, 3);
 
     
 -- 課程(course)
 create table course(
-    cr_id int primary key,
+    cr_id int AUTO_INCREMENT primary key,
     u_id int,
     foreign key (u_id) references user (u_id),
     cr_class varchar(20),
@@ -96,9 +96,9 @@ create table course(
     cr_level VARCHAR(10)
     );
     
-    insert into course(cr_id,u_id,cr_class ,cr_state ,cr_title ,cr_subtitle ,cr_intro ,cr_cover ,cr_price ,cr_create_date ,cr_edit_date ,cr_cm_quan ,cr_tot_star ,cr_purpose_1 ,cr_purpose_2 ,cr_purpose_3 ,cr_pre,cr_target_1 ,cr_hello_msg ,cr_cong ,cr_level )values(1, 101, '健身', 1, '三十天快速減肥', 'Introduction to Programming', 'This course covers the basics of programming.', NULL, 29, '2023-01-01 08:00:00', '2023-01-10 12:30:00', 50, 4, 'Learn Programming', 'Build Web Apps', 'Data Analysis', NULL, 'Beginners', NULL, NULL, 'Normal');
-    insert into course(cr_id,u_id,cr_class ,cr_state ,cr_title ,cr_subtitle ,cr_intro ,cr_cover ,cr_price ,cr_create_date ,cr_edit_date ,cr_cm_quan ,cr_tot_star ,cr_purpose_1 ,cr_purpose_2 ,cr_purpose_3 ,cr_pre,cr_target_1 ,cr_hello_msg ,cr_cong ,cr_level )values(2, 102, '有氧', 1, '有氧八週', 'Graphic Design Fundamentals', 'Explore the world of graphic design with hands-on projects.', NULL, 49, '2023-02-15 10:30:00', '2023-02-28 15:45:00', 30, 5, 'Learn Graphic Design', 'Create Stunning Logos', 'Illustration Techniques', NULL, 'Design Enthusiasts', NULL, NULL, 'Normal');
-    insert into course(cr_id,u_id,cr_class ,cr_state ,cr_title ,cr_subtitle ,cr_intro ,cr_cover ,cr_price ,cr_create_date ,cr_edit_date ,cr_cm_quan ,cr_tot_star ,cr_purpose_1 ,cr_purpose_2 ,cr_purpose_3 ,cr_pre,cr_target_1 ,cr_hello_msg ,cr_cong ,cr_level )values(3, 103, '減脂', 1, '魔鬼減脂肪', 'Healthy Cooking Essentials', 'Learn to cook delicious and healthy meals for yourself and your loved ones.', NULL, 39, '2023-03-20 09:15:00', '2023-03-31 14:00:00', 25, 4, 'Healthy Cooking', 'Nutrition Essentials', 'Meal Planning', 'Basic Cooking Skills', 'Health Enthusiasts', NULL, NULL, 'Beginner');
+    insert into course(u_id,cr_class ,cr_state ,cr_title ,cr_subtitle ,cr_intro ,cr_cover ,cr_price ,cr_create_date ,cr_edit_date ,cr_cm_quan ,cr_tot_star ,cr_purpose_1 ,cr_purpose_2 ,cr_purpose_3 ,cr_pre,cr_target_1 ,cr_hello_msg ,cr_cong ,cr_level )values(10001, '健身', 1, '三十天快速減肥', 'Introduction to Programming', 'This course covers the basics of programming.', NULL, 29, '2023-01-01 08:00:00', '2023-01-10 12:30:00', 50, 4, 'Learn Programming', 'Build Web Apps', 'Data Analysis', NULL, 'Beginners', NULL, NULL, 'Normal');
+    insert into course(u_id,cr_class ,cr_state ,cr_title ,cr_subtitle ,cr_intro ,cr_cover ,cr_price ,cr_create_date ,cr_edit_date ,cr_cm_quan ,cr_tot_star ,cr_purpose_1 ,cr_purpose_2 ,cr_purpose_3 ,cr_pre,cr_target_1 ,cr_hello_msg ,cr_cong ,cr_level )values(10002, '有氧', 1, '有氧八週', 'Graphic Design Fundamentals', 'Explore the world of graphic design with hands-on projects.', NULL, 49, '2023-02-15 10:30:00', '2023-02-28 15:45:00', 30, 5, 'Learn Graphic Design', 'Create Stunning Logos', 'Illustration Techniques', NULL, 'Design Enthusiasts', NULL, NULL, 'Normal');
+    insert into course(u_id,cr_class ,cr_state ,cr_title ,cr_subtitle ,cr_intro ,cr_cover ,cr_price ,cr_create_date ,cr_edit_date ,cr_cm_quan ,cr_tot_star ,cr_purpose_1 ,cr_purpose_2 ,cr_purpose_3 ,cr_pre,cr_target_1 ,cr_hello_msg ,cr_cong ,cr_level )values(10003, '減脂', 1, '魔鬼減脂肪', 'Healthy Cooking Essentials', 'Learn to cook delicious and healthy meals for yourself and your loved ones.', NULL, 39, '2023-03-20 09:15:00', '2023-03-31 14:00:00', 25, 4, 'Healthy Cooking', 'Nutrition Essentials', 'Meal Planning', 'Basic Cooking Skills', 'Health Enthusiasts', NULL, NULL, 'Beginner');
     
 -- 用戶收藏課程清單(user_collect_list)
 CREATE TABLE user_collect_list (
@@ -109,9 +109,9 @@ CREATE TABLE user_collect_list (
     CONSTRAINT fk_user_collect_list_u_id FOREIGN KEY (u_id) REFERENCES user(u_id),
     collect_status INT
 );
-	INSERT INTO user_collect_list(cr_id, u_id, collect_status)VALUES(1, 101, 1);
-	INSERT INTO user_collect_list(cr_id, u_id, collect_status)VALUES(2, 102, 1);
-	INSERT INTO user_collect_list(cr_id, u_id, collect_status)VALUES(3, 103, 0);
+	INSERT INTO user_collect_list(cr_id, u_id, collect_status)VALUES(1, 10001, 1);
+	INSERT INTO user_collect_list(cr_id, u_id, collect_status)VALUES(2, 10002, 1);
+	INSERT INTO user_collect_list(cr_id, u_id, collect_status)VALUES(3, 10003, 0);
     
 -- 用戶瀏覽課程清單(user_view_list)
 CREATE TABLE user_view_list (
@@ -122,9 +122,9 @@ CREATE TABLE user_view_list (
      CONSTRAINT fk_user_view_list_u_id FOREIGN KEY (u_id) REFERENCES user(u_id),
     view_status INT
     );
-	INSERT INTO user_view_list(cr_id, u_id, view_status)VALUES(1, 101, 1);
-    INSERT INTO user_view_list(cr_id, u_id, view_status)VALUES(2, 102, 1);
-    INSERT INTO user_view_list(cr_id, u_id, view_status)VALUES(3, 103, 0);
+	INSERT INTO user_view_list(cr_id, u_id, view_status)VALUES(1, 10001, 1);
+    INSERT INTO user_view_list(cr_id, u_id, view_status)VALUES(2, 10002, 1);
+    INSERT INTO user_view_list(cr_id, u_id, view_status)VALUES(3, 10003, 0);
 
 -- 訂單明細(detail)
 CREATE TABLE detail(
@@ -140,9 +140,9 @@ CREATE TABLE detail(
     cd_gift_status INT,
     cd_gift_remark VARCHAR(50)
 ); 
-	INSERT INTO detail(u_id, cr_id, od_id, cd_price, cd_gift, cd_gift_status, cd_gift_remark)VALUES(101, 1, 1, 0, 0, NULL, 1);
-    INSERT INTO detail(u_id, cr_id, od_id, cd_price, cd_gift, cd_gift_status, cd_gift_remark)VALUES(102, 2, 2, 1, 1, 1, 2);
-    INSERT INTO detail(u_id, cr_id, od_id, cd_price, cd_gift, cd_gift_status, cd_gift_remark)VALUES(103, 3, 3, 0, 0, NULL, 3);
+	INSERT INTO detail(u_id, cr_id, od_id, cd_price, cd_gift, cd_gift_status, cd_gift_remark)VALUES(10001, 1, 1, 0, 0, NULL, 1);
+    INSERT INTO detail(u_id, cr_id, od_id, cd_price, cd_gift, cd_gift_status, cd_gift_remark)VALUES(10002, 2, 2, 1, 1, 1, 2);
+    INSERT INTO detail(u_id, cr_id, od_id, cd_price, cd_gift, cd_gift_status, cd_gift_remark)VALUES(10003, 3, 3, 0, 0, NULL, 3);
 
 -- 課程詳細資料(course_detail)
 CREATE TABLE course_detail (
@@ -218,9 +218,9 @@ CREATE TABLE ad_carousel_order (
     adc_status INT,
     adc_order_enddate DATETIME DEFAULT CURRENT_TIMESTAMP
 );
-	INSERT INTO ad_carousel_order(ad_id, u_id, cr_id, adc_start_date, adc_end_date, adc_total_price, adc_update_pic, adc_status, adc_order_enddate)VALUES(1, 101, 1, '2023-01-01 08:00:00', '2023-01-10 12:30:00', 500, NULL, 1, '2023-01-15 10:00:00');
-    INSERT INTO ad_carousel_order(ad_id, u_id, cr_id, adc_start_date, adc_end_date, adc_total_price, adc_update_pic, adc_status, adc_order_enddate)VALUES(2, 102, 1, '2023-02-15 10:30:00', '2023-02-28 15:45:00', 700, NULL, 1, '2023-03-05 14:30:00');
-    INSERT INTO ad_carousel_order(ad_id, u_id, cr_id, adc_start_date, adc_end_date, adc_total_price, adc_update_pic, adc_status, adc_order_enddate)VALUES(3, 103, 1, '2023-03-20 09:15:00', '2023-03-31 14:00:00', 600, NULL, 1, '2023-04-02 11:45:00');
+	INSERT INTO ad_carousel_order(ad_id, u_id, cr_id, adc_start_date, adc_end_date, adc_total_price, adc_update_pic, adc_status, adc_order_enddate)VALUES(1, 10001, 1, '2023-01-01 08:00:00', '2023-01-10 12:30:00', 500, NULL, 1, '2023-01-15 10:00:00');
+    INSERT INTO ad_carousel_order(ad_id, u_id, cr_id, adc_start_date, adc_end_date, adc_total_price, adc_update_pic, adc_status, adc_order_enddate)VALUES(2, 10002, 1, '2023-02-15 10:30:00', '2023-02-28 15:45:00', 700, NULL, 1, '2023-03-05 14:30:00');
+    INSERT INTO ad_carousel_order(ad_id, u_id, cr_id, adc_start_date, adc_end_date, adc_total_price, adc_update_pic, adc_status, adc_order_enddate)VALUES(3, 10003, 1, '2023-03-20 09:15:00', '2023-03-31 14:00:00', 600, NULL, 1, '2023-04-02 11:45:00');
 
 -- 廣到訂單-首頁推薦(ad_recommand_order)
 create table ad_recommand_order(
@@ -236,26 +236,27 @@ create table ad_recommand_order(
     adr_total_price int,
     adr_status int,
     adr_order_enddate datetime);
-	INSERT INTO ad_recommand_order(u_id, ad_id, cr_id, adr_start_date, adr_end_date, adr_total_price, adr_status, adr_order_enddate)VALUES(101, 1, 1, '2023-01-01 08:00:00', '2023-01-10 12:30:00', 800, 1, '2023-01-15 10:00:00');
-    INSERT INTO ad_recommand_order(u_id, ad_id, cr_id, adr_start_date, adr_end_date, adr_total_price, adr_status, adr_order_enddate)VALUES(102, 2, 2, '2023-02-15 10:30:00', '2023-02-28 15:45:00', 1000, 1, '2023-03-05 14:30:00');
-    INSERT INTO ad_recommand_order(u_id, ad_id, cr_id, adr_start_date, adr_end_date, adr_total_price, adr_status, adr_order_enddate)VALUES(103, 3, 3, '2023-03-20 09:15:00', '2023-03-31 14:00:00', 900, 1, '2023-04-02 11:45:00');
+	INSERT INTO ad_recommand_order(u_id, ad_id, cr_id, adr_start_date, adr_end_date, adr_total_price, adr_status, adr_order_enddate)VALUES(10001, 1, 1, '2023-01-01 08:00:00', '2023-01-10 12:30:00', 800, 1, '2023-01-15 10:00:00');
+    INSERT INTO ad_recommand_order(u_id, ad_id, cr_id, adr_start_date, adr_end_date, adr_total_price, adr_status, adr_order_enddate)VALUES(10002, 2, 2, '2023-02-15 10:30:00', '2023-02-28 15:45:00', 1000, 1, '2023-03-05 14:30:00');
+    INSERT INTO ad_recommand_order(u_id, ad_id, cr_id, adr_start_date, adr_end_date, adr_total_price, adr_status, adr_order_enddate)VALUES(10003, 3, 3, '2023-03-20 09:15:00', '2023-03-31 14:00:00', 900, 1, '2023-04-02 11:45:00');
 
 -- 社群貼文(social_post)
-CREATE TABLE social_post (
-    sp_id INT PRIMARY KEY,
-    u_id INT,
-    sp_category VARCHAR(20),
-    sp_time DATETIME,
-    sp_updated DATETIME,
-    sp_status INT,
-    sp_title VARCHAR(50),
-    sp_content LONGTEXT,
-    FOREIGN KEY (u_id) REFERENCES user (u_id),
-    sp_pic longblob
-);
-	INSERT INTO social_post(sp_id, u_id, sp_category, sp_time, sp_status, sp_updated, sp_content, sp_title, sp_pic)VALUES(1,101, '心情', '2023-01-01 10:00:00', 1, '2023-01-01 10:00:00', 'This is the content of the first post.', 'Post Title 1', null);
-    INSERT INTO social_post(sp_id, u_id, sp_category, sp_time, sp_status, sp_updated, sp_content, sp_title, sp_pic)VALUES(2,102, '日記', '2023-02-15 12:30:00', 1, '2023-02-15 12:30:00', 'Second post content goes here.', 'Another Title 2', null);
-    INSERT INTO social_post(sp_id, u_id, sp_category, sp_time, sp_status, sp_updated, sp_content, sp_title, sp_pic)VALUES(3,103, '抒發', '2023-03-20 15:45:00', 1, '2023-03-20 15:45:00', 'Content of the third post is written here.', 'Title for Post 3', null);
+CREATE TABLE social_post(
+	sp_id int NOT NULL AUTO_INCREMENT,
+	u_id int DEFAULT NULL,
+	sp_category varchar(20) DEFAULT NULL,
+	sp_time datetime DEFAULT NULL,
+	sp_updated datetime DEFAULT NULL,
+	sp_status int DEFAULT NULL,
+	sp_title varchar(50) DEFAULT NULL,
+	sp_content longtext,
+	sp_pic longblob,
+	PRIMARY KEY (sp_id),
+	KEY u_id (u_id),
+	CONSTRAINT social_post_ibfk_1 FOREIGN KEY (u_id) REFERENCES user (u_id));
+	INSERT INTO social_post(sp_id, u_id, sp_category, sp_time, sp_status, sp_updated, sp_content, sp_title, sp_pic)VALUES(1,10001, '心情', '2023-01-01 10:00:00', 1, '2023-01-01 10:00:00', 'This is the content of the first post.', 'Post Title 1', null);
+    INSERT INTO social_post(sp_id, u_id, sp_category, sp_time, sp_status, sp_updated, sp_content, sp_title, sp_pic)VALUES(2,10002, '日記', '2023-02-15 12:30:00', 1, '2023-02-15 12:30:00', 'Second post content goes here.', 'Another Title 2', null);
+    INSERT INTO social_post(sp_id, u_id, sp_category, sp_time, sp_status, sp_updated, sp_content, sp_title, sp_pic)VALUES(3,10003, '抒發', '2023-03-20 15:45:00', 1, '2023-03-20 15:45:00', 'Content of the third post is written here.', 'Title for Post 3', null);
 
 -- 社群回文(social_reply)
 CREATE TABLE social_reply (
@@ -269,9 +270,9 @@ CREATE TABLE social_reply (
     FOREIGN KEY (u_id) REFERENCES user(u_id), -- 替换为实际的用户表和列名
     FOREIGN KEY (sp_id) REFERENCES social_post(sp_id)  -- 替换为实际的社交帖子表和列名
 );
-	INSERT INTO social_reply (sr_id, u_id, sp_id, sr_time, sr_update, sr_status, sr_content)VALUES(1, 101, 1, '2023-01-02 11:30:00', '2023-01-02 11:30:00', 1, 'Comment content for the first post.');
-    INSERT INTO social_reply (sr_id, u_id, sp_id, sr_time, sr_update, sr_status, sr_content)VALUES(2, 101, 1, '2023-01-02 11:30:00', '2023-01-02 11:30:00', 1, 'Comment content for the first post.');
-	INSERT INTO social_reply (sr_id, u_id, sp_id, sr_time, sr_update, sr_status, sr_content)VALUES(3, 101, 1, '2023-01-02 11:30:00', '2023-01-02 11:30:00', 1, 'Comment content for the first post.');
+	INSERT INTO social_reply (sr_id, u_id, sp_id, sr_time, sr_update, sr_status, sr_content)VALUES(1, 10001, 1, '2023-01-02 11:30:00', '2023-01-02 11:30:00', 1, 'Comment content for the first post.');
+    INSERT INTO social_reply (sr_id, u_id, sp_id, sr_time, sr_update, sr_status, sr_content)VALUES(2, 10001, 1, '2023-01-02 11:30:00', '2023-01-02 11:30:00', 1, 'Comment content for the first post.');
+	INSERT INTO social_reply (sr_id, u_id, sp_id, sr_time, sr_update, sr_status, sr_content)VALUES(3, 10001, 1, '2023-01-02 11:30:00', '2023-01-02 11:30:00', 1, 'Comment content for the first post.');
     
 -- 意見回饋(opinion)
 CREATE TABLE opinion (
@@ -298,9 +299,9 @@ CREATE TABLE subscribe (
     coach_id INT,
     sub_status INT
 );
-	INSERT INTO subscribe(u_id, coach_id, sub_status)VALUES(101, 102, 1);
-    INSERT INTO subscribe(u_id, coach_id, sub_status)VALUES(102, 101, 1);
-    INSERT INTO subscribe(u_id, coach_id, sub_status)VALUES(103, 101, 1);
+	INSERT INTO subscribe(u_id, coach_id, sub_status)VALUES(10001, 10002, 1);
+    INSERT INTO subscribe(u_id, coach_id, sub_status)VALUES(10002, 10001, 1);
+    INSERT INTO subscribe(u_id, coach_id, sub_status)VALUES(10003, 10001, 1);
 
 -- 討論區貼文(forum_post)
 CREATE TABLE forum_post (
@@ -315,9 +316,9 @@ CREATE TABLE forum_post (
     fp_update DATETIME,
     fp_pic longblob
 );
-	INSERT INTO forum_post (u_id, fp_category, fp_title, fp_content, fp_time, fp_status, fp_update, fp_pic)VALUES(101, '健康', 'Introduction to Programming', 'This is a post about programming basics.', '2023-01-05 09:30:00', 1, '2023-01-06 14:45:00', null);
-    INSERT INTO forum_post (u_id, fp_category, fp_title, fp_content, fp_time, fp_status, fp_update, fp_pic)VALUES(102, '詢問', 'Graphic Design Tips', 'Sharing tips and tricks for graphic design enthusiasts.', '2023-02-10 11:15:00', 1, '2023-02-12 16:20:00', null);
-    INSERT INTO forum_post (u_id, fp_category, fp_title, fp_content, fp_time, fp_status, fp_update, fp_pic)VALUES(103, '分享', 'Healthy Cooking Recipes', 'Discover and share healthy cooking recipes.', '2023-03-18 08:45:00', 1, '2023-03-20 12:55:00', null);
+	INSERT INTO forum_post (u_id, fp_category, fp_title, fp_content, fp_time, fp_status, fp_update, fp_pic)VALUES(10001, '健康', 'Introduction to Programming', 'This is a post about programming basics.', '2023-01-05 09:30:00', 1, '2023-01-06 14:45:00', null);
+    INSERT INTO forum_post (u_id, fp_category, fp_title, fp_content, fp_time, fp_status, fp_update, fp_pic)VALUES(10002, '詢問', 'Graphic Design Tips', 'Sharing tips and tricks for graphic design enthusiasts.', '2023-02-10 11:15:00', 1, '2023-02-12 16:20:00', null);
+    INSERT INTO forum_post (u_id, fp_category, fp_title, fp_content, fp_time, fp_status, fp_update, fp_pic)VALUES(10003, '分享', 'Healthy Cooking Recipes', 'Discover and share healthy cooking recipes.', '2023-03-18 08:45:00', 1, '2023-03-20 12:55:00', null);
 
 -- 討論區回文table(forum_reply)
 CREATE TABLE forum_reply (
@@ -331,9 +332,9 @@ CREATE TABLE forum_reply (
     fr_status INT,
     fr_updated DATETIME
 ); 
-	INSERT INTO forum_reply (u_id, fp_id, fr_content, fr_time, fr_status, fr_updated)VALUES(101, 1, 'Great post! I learned a lot from it.', '2023-01-07 10:00:00', 1, '2023-01-08 12:30:00');
-    INSERT INTO forum_reply (u_id, fp_id, fr_content, fr_time, fr_status, fr_updated)VALUES(102, 2, 'Thanks for sharing these design tips!', '2023-02-12 17:00:00', 1, '2023-02-14 09:45:00');
-    INSERT INTO forum_reply (u_id, fp_id, fr_content, fr_time, fr_status, fr_updated)VALUES(103, 3, 'I tried one of the recipes, and it was delicious!', '2023-03-20 14:30:00', 1, '2023-03-21 11:20:00');
+	INSERT INTO forum_reply (u_id, fp_id, fr_content, fr_time, fr_status, fr_updated)VALUES(10001, 1, 'Great post! I learned a lot from it.', '2023-01-07 10:00:00', 1, '2023-01-08 12:30:00');
+    INSERT INTO forum_reply (u_id, fp_id, fr_content, fr_time, fr_status, fr_updated)VALUES(10002, 2, 'Thanks for sharing these design tips!', '2023-02-12 17:00:00', 1, '2023-02-14 09:45:00');
+    INSERT INTO forum_reply (u_id, fp_id, fr_content, fr_time, fr_status, fr_updated)VALUES(10003, 3, 'I tried one of the recipes, and it was delicious!', '2023-03-20 14:30:00', 1, '2023-03-21 11:20:00');
 
 -- 課程公告(announcement)
 CREATE TABLE announcement (
@@ -361,9 +362,9 @@ CREATE TABLE course_qa (
     CONSTRAINT fk_course_qa_u_id FOREIGN KEY (u_id) REFERENCES user(u_id),
     CONSTRAINT fk_course_qa_cr_id FOREIGN KEY (cr_id) REFERENCES course(cr_id)
 );
-	INSERT INTO course_qa(qa_status, qa_title, u_id, qa_date, qa_photo, cr_id)VALUES(1, 'Understanding Programming Concepts', 101, '2023-01-15 10:00:00', NULL, 1);
-    INSERT INTO course_qa(qa_status, qa_title, u_id, qa_date, qa_photo, cr_id)VALUES(1, 'Graphic Design Workshop Inquiry', 102, '2023-02-25 15:30:00', NULL, 2);
-    INSERT INTO course_qa(qa_status, qa_title, u_id, qa_date, qa_photo, cr_id)VALUES(1, 'Healthy Cooking Class Question', 103, '2023-03-30 11:00:00', NULL, 3);
+	INSERT INTO course_qa(qa_status, qa_title, u_id, qa_date, qa_photo, cr_id)VALUES(1, 'Understanding Programming Concepts', 10001, '2023-01-15 10:00:00', NULL, 1);
+    INSERT INTO course_qa(qa_status, qa_title, u_id, qa_date, qa_photo, cr_id)VALUES(1, 'Graphic Design Workshop Inquiry', 10002, '2023-02-25 15:30:00', NULL, 2);
+    INSERT INTO course_qa(qa_status, qa_title, u_id, qa_date, qa_photo, cr_id)VALUES(1, 'Healthy Cooking Class Question', 10003, '2023-03-30 11:00:00', NULL, 3);
     
 -- QA回覆(reply_content)
 CREATE TABLE reply_content (
@@ -376,9 +377,9 @@ CREATE TABLE reply_content (
     CONSTRAINT fk_reply_content_qa_id FOREIGN KEY (qa_id) REFERENCES course_qa(qa_id),
     rc_status INT
 );
-	INSERT INTO reply_content (u_id, rc_content, rc_date, qa_id, rc_status)VALUES(101, 'Programming concepts can be challenging at first, but with practice, you will become more comfortable.', '2023-01-16 12:15:00', 1, 1);
-    INSERT INTO reply_content (u_id, rc_content, rc_date, qa_id, rc_status)VALUES(102, 'In the Graphic Design Workshop, we cover various design principles and hands-on projects. Feel free to ask any specific questions you may have!', '2023-02-26 16:45:00', 2, 1);
-    INSERT INTO reply_content (u_id, rc_content, rc_date, qa_id, rc_status)VALUES(103, 'For the Healthy Cooking Class, we focus on nutritious recipes and cooking techniques. Let me know if you have any dietary preferences or specific topics you want to cover.', '2023-03-31 12:30:00', 3, 1);
+	INSERT INTO reply_content (u_id, rc_content, rc_date, qa_id, rc_status)VALUES(10001, 'Programming concepts can be challenging at first, but with practice, you will become more comfortable.', '2023-01-16 12:15:00', 1, 1);
+    INSERT INTO reply_content (u_id, rc_content, rc_date, qa_id, rc_status)VALUES(10002, 'In the Graphic Design Workshop, we cover various design principles and hands-on projects. Feel free to ask any specific questions you may have!', '2023-02-26 16:45:00', 2, 1);
+    INSERT INTO reply_content (u_id, rc_content, rc_date, qa_id, rc_status)VALUES(10003, 'For the Healthy Cooking Class, we focus on nutritious recipes and cooking techniques. Let me know if you have any dietary preferences or specific topics you want to cover.', '2023-03-31 12:30:00', 3, 1);
 
 -- 評論(comment)
 CREATE TABLE comment (
@@ -391,6 +392,6 @@ CREATE TABLE comment (
     u_id INT,
     CONSTRAINT fk_comment_cr_id FOREIGN KEY (cr_id) REFERENCES course(cr_id),
     CONSTRAINT fk_comment_u_id FOREIGN KEY (u_id) REFERENCES user(u_id));
-    insert into comment(cr_id, cm_content, cm_date, cm_star, cm_status, u_id)values(1,'123','2024-01-10 09:30:00',5,2,101);
-    insert into comment(cr_id, cm_content, cm_date, cm_star, cm_status, u_id)values(2,'2333','2022-01-10 09:30:00',6,2,102);
-    insert into comment(cr_id, cm_content, cm_date, cm_star, cm_status, u_id)values(3,'434','2025-01-10 09:30:00',6,2,103);
+    insert into comment(cr_id, cm_content, cm_date, cm_star, cm_status, u_id)values(1,'123','2024-01-10 09:30:00',5,2,10001);
+    insert into comment(cr_id, cm_content, cm_date, cm_star, cm_status, u_id)values(2,'2333','2022-01-10 09:30:00',6,2,10002);
+    insert into comment(cr_id, cm_content, cm_date, cm_star, cm_status, u_id)values(3,'434','2025-01-10 09:30:00',6,2,10003);

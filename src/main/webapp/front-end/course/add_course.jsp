@@ -1,73 +1,87 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ page import="com.fitanywhere.course.model.*"%>
+<%@ page import="com.fitanywhere.course.model.*" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+    
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>課程資料修改</title>
+<title>新增課程</title>
 <style>
-  table#table-1 {
-    width: 450px;
+table#table-1 {
+	width: 450px;
 	background-color: #CCCCFF;
-    border: 2px solid black;
-    text-align: center;
-  }
-  table#table-1 h4 {
-    color: red;s
-    display: block;
-    margin-bottom: 1px;
-  }
-  h4 {
-    color: blue;
-    display: inline;
-  }
+	border: 2px solid black;
+	text-align: center;
+}
+
+table#table-1 h4 {
+	color: red;
+	display: block;
+	margin-bottom: 1px;
+}
+
+h4 {
+	color: blue;
+	display: inline;
+}
 </style>
 
 <style>
-  table {
+table {
 	background-color: white;
 	margin-top: 1px;
 	margin-bottom: 1px;
-  }
-  table, th, td {
-    border: 0px solid #CCCCFF;
-  }
-  th, td {
-    padding: 1px;
-  }
+}
+
+table, th, td {
+	border: 0px solid #CCCCFF;
+}
+
+th, td {
+	padding: 1px;
+}
 </style>
 </head>
 <body bgcolor='white'>
 
 <table id="table-1">
-	<tr><td>
-		 <h3>課程資料修改</h3>
-		 <h4><a href="course_page.jsp"><img src="images/back1.gif" width="100" height="32" border="0">回首頁</a></h4>
-	</td></tr>
-</table>
+		<tr>
+			<td>
+				<h3>新增課程</h3>
+			</td>
+			<td>
+				<h4>
+					<a href="course_page.jsp"><img src="images/add" width="100"
+						height="100" border="0">回首頁</a>
+				</h4>
+			</td>
+		</tr>
+	</table>
 
-<h3>資料修改:</h3>
+	<h3>課程新增:</h3>
 
-<%-- 錯誤表列 --%>
-<c:if test="${not empty errorMsgs}">
-	<font style="color:red">請修正以下錯誤:</font>
-	<ul>
-		<c:forEach var="message" items="${errorMsgs}">
-			<li style="color:red">${message.value}</li>
-		</c:forEach>
-	</ul>
-</c:if>
 
-<FORM METHOD="post" ACTION="course.do" name="form1" enctype="multipart/form-data">
+	<%-- 錯誤表列 --%>
+	<c:if test="${not empty errorMsgs}">
+		<font style="color: red">請修正以下錯誤:</font>
+		<ul>
+			<c:forEach var="message" items="${errorMsgs}">
+				<li style="color: red">${message}</li>
+			</c:forEach>
+		</ul>
+	</c:if>
+
+	<FORM METHOD="post" ACTION="course.do" name="form1"
+		enctype="multipart/form-data">
 <table>
-   <tr>
+    <%-- <tr>
 				<td>課程ID:</td>
 				<td><input type="TEXT" name="crId" value="${param.crId}"
-					size="20" readonly/></td>
-<%-- 				<td>${errorMsgs.crId}</td> --%>
-			</tr>
+					size="20" /></td>
+				<td>${errorMsgs.crId}</td>
+			</tr> --%>
 			<tr>
 				<td>教練用戶ID:</td>
 				<td><input type="TEXT" name="uId" value="${param.uId}"
@@ -106,7 +120,7 @@
 			</tr>
 			<tr>
 				<td>課程封面縮圖:</td>
-				<td><input type="TEXT" name="crCover"
+				<td><input type="file" name="crCover"
 					value="${param.crCover}" size="45" /></td>
 <%-- 				<td>${errorMsgs.crCover}</td> --%>
 			</tr>
@@ -116,19 +130,18 @@
 					size="45" /></td>
 <%-- 				<td>${errorMsgs.crPrice}</td> --%>
 			</tr>
-			<tr>
+			<%-- <tr>
 				<td>課程上架時間:</td>
 				<td><input type="TEXT" name="crCreateDate" value="${param.crCreateDate}"
 					size="45" /></td>
-<%-- 				<td>${errorMsgs.crCreateDate}</td> --%>
+				<td>${errorMsgs.crCreateDate}</td>
 			</tr>
 			<tr>
 				<td>課程最後更新時間:</td>
 				<td><input type="TEXT" name="crEditDate" value="${param.crEditDate}"
 					size="5" /></td>
-<%-- 				<td>${errorMsgs.crEditDate}</td> --%>
-			</tr>
-			
+				<td>${errorMsgs.crEditDate}</td>
+			</tr> --%>
 			<tr>
 				<td>課程評論數量:</td>
 				<td><input type="TEXT" name="crCmQuan" 
@@ -192,10 +205,9 @@
 			</tr>
 
 </table>
-<br>
-<input type="hidden" name="action" value="update">
-<input type="hidden" name="crId" value="${param.crId}">
-<input type="submit" value="送出修改"></FORM>
+		<br> <input type="hidden" name="action" value="insert"> <input
+			type="submit" value="送出新增">
+	</FORM>
 
 </body>
 </html>
