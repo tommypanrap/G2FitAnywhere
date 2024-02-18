@@ -1,7 +1,8 @@
-package com.fitanywhere.forumpost;
+package com.fitanywhere.forumpost.model;
 
 import java.io.Serializable;
 import java.sql.Timestamp;
+import java.util.Arrays;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -12,7 +13,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name= "forum_post")
-public class ForumpostVO implements Serializable {
+public class ForumPostVO implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
@@ -44,11 +45,11 @@ public class ForumpostVO implements Serializable {
 	@Column(name = "fp_pic")
 	private byte[] fpPic;
 
-	public ForumpostVO() {
+	public ForumPostVO() {
 		super();
 	}
 
-	public ForumpostVO(Integer fpId, Integer uId, String fpCategory, String fpTitle, String fpContent, Timestamp fpTime,
+	public ForumPostVO(Integer fpId, Integer uId, String fpCategory, String fpTitle, String fpContent, Timestamp fpTime,
 			String fpStatus, Timestamp fpUpdate, byte[] fpPic) {
 		super();
 		this.fpId = fpId;
@@ -132,6 +133,13 @@ public class ForumpostVO implements Serializable {
 
 	public void setFpPic(byte[] fpPic) {
 		this.fpPic = fpPic;
+	}
+
+	@Override
+	public String toString() {
+		return "ForumPostVO [fpId=" + fpId + ", uId=" + uId + ", fpCategory=" + fpCategory + ", fpTitle=" + fpTitle
+				+ ", fpContent=" + fpContent + ", fpTime=" + fpTime + ", fpStatus=" + fpStatus + ", fpUpdate="
+				+ fpUpdate + ", fpPic=" + Arrays.toString(fpPic) + "]";
 	}
 	
 	
