@@ -52,17 +52,17 @@ public class UserController extends HttpServlet {
 		}
 
 //		下面這段純粹是登入後在Eclipse console列印當下Session看有無添加成功
-		HttpSession session = request.getSession(false); // 獲取當前Session，不創建新的
-	    if (session != null) {
-	    	System.out.println("列印是否登入後成功將基本資訊寫入會員新發的Session中");
-	        Enumeration<String> attributeNames = session.getAttributeNames();
-	        while (attributeNames.hasMoreElements()) {	        	
-	            String attributeName = attributeNames.nextElement();
-	            System.out.println(attributeName + ": " + session.getAttribute(attributeName));
-	        }
-	    } else {
-	        System.out.println("原定在登入後寫入會員Session的基本資料寫入失敗");
-	    }
+//		HttpSession session = request.getSession(false); // 獲取當前Session，不創建新的
+//	    if (session != null) {
+//	    	System.out.println("列印是否登入後成功將基本資訊寫入會員新發的Session中");
+//	        Enumeration<String> attributeNames = session.getAttributeNames();
+//	        while (attributeNames.hasMoreElements()) {	        	
+//	            String attributeName = attributeNames.nextElement();
+//	            System.out.println(attributeName + ": " + session.getAttribute(attributeName));
+//	        }
+//	    } else {
+//	        System.out.println("原定在登入後寫入會員Session的基本資料寫入失敗");
+//	    }
 
 	}
 
@@ -136,26 +136,37 @@ public class UserController extends HttpServlet {
 
 				// 註冊成功則刪除Session 因為裡面有註冊資料
 				session.invalidate();
+				System.out.println("有清資料");
 
 				// 創建一個新的 Session
 				HttpSession newSession = request.getSession(true);
+				System.out.println("有新session");
 
 				// 將註冊成功的標誌存儲在 session 中
 				newSession.setAttribute("registrationSuccess", true);
+				System.out.println("有將註冊成功寫入session");
+
 
 				// 重定向到登入頁面
-				response.sendRedirect(request.getContextPath() + "/front-end/user/user_login.jsp");
+//				String rePath = request.getContextPath();
+//				System.out.println("rePath = " + rePath);
+				
+				response.setContentType("text/plain");
+				PrintWriter out = response.getWriter();
+				out.print("0"); //註冊成功
+				out.flush();
+				out.close();
 			} else {
 				System.out.println("註冊異常");
 				// 可以根據實際需求返回錯誤信息或進行其他處理
 			}
 		} else {
-			System.out.println("輸入驗證碼為: " + verificationCodeFromRequest);
+			
 			System.out.println("驗證碼錯誤");
-			// 直接返回錯誤碼"1"給前端，不進行頁面跳轉
+			
 			response.setContentType("text/plain");
 			PrintWriter out = response.getWriter();
-			out.print("1");
+			out.print("1");//驗證碼錯誤
 			out.flush();
 			out.close();
 		}

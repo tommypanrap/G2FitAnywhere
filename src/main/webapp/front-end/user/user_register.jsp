@@ -475,11 +475,22 @@
           updateNextStepButtonState();
         }
 
+        // function updateNextStepButtonState() {
+        //   const allChecksPassed = Object.values(checksPassed).every(status => status);
+        //   document.getElementById('nextStepButton').disabled = !allChecksPassed;
+        //   console.log('All checks passed: ' + allChecksPassed);
+        // }
+
+
+        // 更新下一步按鈕狀態
         function updateNextStepButtonState() {
-          const allChecksPassed = Object.values(checksPassed).every(status => status);
+          // 檢查是否所有欄位都為true並且noDuplicate的子項目也都為true
+          const allChecksPassed = Object.values(checksPassed).every(status => status) && Object.values(noDuplicate).every(status => status);
+          // 解鎖/鎖定下一步按鈕
           document.getElementById('nextStepButton').disabled = !allChecksPassed;
           console.log('All checks passed: ' + allChecksPassed);
         }
+
 
         function performCheck(field) {
           const value = document.getElementById(field).value.trim();
@@ -591,6 +602,84 @@
         });
       });
 
+      // =======================================================
+
+      // 建立結果儲存物件
+      let noDuplicate = {
+        u_nickname: false,
+        u_phone: false,
+        u_mail: false,
+      };
+
+      // 欄位填寫完成後檢查重複
+      function checkDuplicate(fieldId, fieldValue) {
+        // 取得欄位值
+        let value = fieldValue.trim();
+        // 欄位不為空值且游標已離開欄位才執行檢查
+        if (value !== "") {
+          // 發送AJAX請求
+          $.ajax({
+            url: "/THA105G2/user_controller",
+            type: "POST",
+            data: {
+              requestType: "checkDuplicate",
+              fieldId: fieldId,
+              fieldValue: value,
+            },
+            success: function (response) {
+              // 根據回應處理
+              if (response === "true") {
+                // 若回傳true，表示重複
+                console.log("重複檢查結果: 重複");
+                alert("此" + getFieldLabel(fieldId) + "已有人使用, 請重新輸入!");
+                // 清空對應的欄位
+                $("#" + fieldId).val("");
+              } else {
+                // 若回傳false，表示不重複，將noDuplicate對應的欄位改為true
+                console.log("重複檢查結果: 不重複");
+                noDuplicate[fieldId] = true;
+              }
+            },
+            error: function (xhr, status, error) {
+              // 處理錯誤
+              console.error("AJAX請求失敗:", error);
+            },
+          });
+        }
+      }
+
+      // 當u_nickname欄位離開時檢查重複
+      $("#u_nickname").blur(function () {
+        console.log("離開暱稱欄位");
+        checkDuplicate("u_nickname", $(this).val());
+      });
+
+      // 當u_phone欄位離開時檢查重複
+      $("#u_phone").blur(function () {
+        console.log("離開手機號碼欄位");
+        checkDuplicate("u_phone", $(this).val());
+      });
+
+      // 當u_mail欄位離開時檢查重複
+      $("#u_mail").blur(function () {
+        console.log("離開信箱欄位");
+        checkDuplicate("u_mail", $(this).val());
+      });
+
+      // 根據欄位ID取得對應的標籤
+      function getFieldLabel(fieldId) {
+        switch (fieldId) {
+          case "u_nickname":
+            return "暱稱";
+          case "u_phone":
+            return "手機號碼";
+          case "u_mail":
+            return "信箱";
+          default:
+            return "";
+        }
+      }
+
 
 
 
@@ -671,12 +760,12 @@
 
         function sendVerificationCode() {
           let verificationCode = Array.from(inputs).map(input => input.value).join("");
-          // 创建FormData对象
+
           let formData = new FormData();
           formData.append("requestType", "verificationMail");
           formData.append("verificationCode", verificationCode);
 
-          // 将FormData转换为URL编码字符串
+          // FormData轉URL編碼
           let urlEncodedData = new URLSearchParams(formData).toString();
 
           fetch("/THA105G2/user_controller", {
@@ -690,8 +779,10 @@
             .then(data => {
               if (data === "1") {
                 alert("驗證碼錯誤");
-                // 清空所有驗證碼輸入框
                 inputs.forEach(input => input.value = "");
+              } else if (data === "0") {
+                // 註冊成功，重定向到登入頁面
+                window.location.href = "/THA105G2/front-end/user/user_login.jsp";
               }
             })
             .catch(error => console.error("Error:", error));
