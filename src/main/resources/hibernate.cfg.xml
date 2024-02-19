@@ -23,6 +23,7 @@
 		<mapping class="com.fitanywhere.adrecommandorder.model.AdRecommandOrderVO"/>
 		<mapping class="com.fitanywhere.course.model.CourseVO"/>
 		<mapping class="com.fitanywhere.user.model.UserVO"/>
+		<mapping class="com.fitanywhere.announcement.model.AnnouncementVO"/>
 		
 	</session-factory>
 </hibernate-configuration>
