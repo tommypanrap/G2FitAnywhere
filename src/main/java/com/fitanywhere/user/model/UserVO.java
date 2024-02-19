@@ -10,8 +10,6 @@ import javax.persistence.JoinColumn;
 import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-
-import java.util.Arrays;
 import java.util.Date;
 
 @Entity
@@ -21,7 +19,7 @@ public class UserVO {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "u_id")
-	private Integer uId;
+	private Integer uID;
 
 	@Column(name = "mood_id")
 	private Integer moodId;
@@ -50,11 +48,8 @@ public class UserVO {
 //	0 = 一般會員; 1 = 教練;
 
 	@Column(name = "u_gender")
-	private String uGender;
+	private Integer uGender;
 //	0 = 男; 1 = 女; 2 = 其他;
-	
-	@Column(name = "u_age")
-	private Integer uAge;
 
 	@Column(name="u_headshot",columnDefinition = "longblob")
 	private byte[] uHeadshot;
@@ -65,9 +60,9 @@ public class UserVO {
 	@Column(name = "u_status")
 	private Integer uStatus;
 //	0 = 正常會員; 1 = 帳號關閉; 
-//
-//	@Column(name = "u_registerdate")
-//	private Date uRegisterdate;
+
+	@Column(name = "u_registerdate")
+	private Date uRegisterdate;
 
 	@Column(name = "c_intro")
 	private String cIntro;
@@ -77,12 +72,13 @@ public class UserVO {
 		// Default constructor
 	}
 
-	public Integer getuId() {
-		return uId;
+	// Getters and setters 
+	public Integer getuID() {
+		return uID;
 	}
 
-	public void setuId(Integer uId) {
-		this.uId = uId;
+	public void setuID(Integer uID) {
+		this.uID = uID;
 	}
 
 	public Integer getMoodId() {
@@ -149,20 +145,12 @@ public class UserVO {
 		this.uCoach = uCoach;
 	}
 
-	public String getuGender() {
+	public Integer getuGender() {
 		return uGender;
 	}
 
-	public void setuGender(String uGender) {
+	public void setuGender(Integer uGender) {
 		this.uGender = uGender;
-	}
-
-	public Integer getuAge() {
-		return uAge;
-	}
-
-	public void setuAge(Integer uAge) {
-		this.uAge = uAge;
 	}
 
 	public byte[] getuHeadshot() {
@@ -189,6 +177,14 @@ public class UserVO {
 		this.uStatus = uStatus;
 	}
 
+	public Date getuRegisterdate() {
+		return uRegisterdate;
+	}
+
+	public void setuRegisterdate(Date uRegisterdate) {
+		this.uRegisterdate = uRegisterdate;
+	}
+
 	public String getcIntro() {
 		return cIntro;
 	}
@@ -196,37 +192,5 @@ public class UserVO {
 	public void setcIntro(String cIntro) {
 		this.cIntro = cIntro;
 	}
-
-	public UserVO(Integer uId, Integer moodId, String uNickname, String uName, String uMail, String uPassword,
-			String uPhone, Integer uVerified, Integer uCoach, String uGender, Integer uAge, byte[] uHeadshot,
-			Date uBirth, Integer uStatus, String cIntro) {
-		super();
-		this.uId = uId;
-		this.moodId = moodId;
-		this.uNickname = uNickname;
-		this.uName = uName;
-		this.uMail = uMail;
-		this.uPassword = uPassword;
-		this.uPhone = uPhone;
-		this.uVerified = uVerified;
-		this.uCoach = uCoach;
-		this.uGender = uGender;
-		this.uAge = uAge;
-		this.uHeadshot = uHeadshot;
-		this.uBirth = uBirth;
-		this.uStatus = uStatus;
-		this.cIntro = cIntro;
-	}
-
-	@Override
-	public String toString() {
-		return "UserVO [uId=" + uId + ", moodId=" + moodId + ", uNickname=" + uNickname + ", uName=" + uName
-				+ ", uMail=" + uMail + ", uPassword=" + uPassword + ", uPhone=" + uPhone + ", uVerified=" + uVerified
-				+ ", uCoach=" + uCoach + ", uGender=" + uGender + ", uAge=" + uAge + ", uHeadshot="
-				+ Arrays.toString(uHeadshot) + ", uBirth=" + uBirth + ", uStatus=" + uStatus + ", cIntro=" + cIntro
-				+ "]";
-	}
-
-	
 
 }
