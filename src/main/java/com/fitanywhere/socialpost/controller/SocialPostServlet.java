@@ -1,4 +1,4 @@
-package com.fitanywhere.social.controller;
+package com.fitanywhere.socialpost.controller;
 
 import java.io.*;
 import java.util.*;
@@ -6,7 +6,7 @@ import java.util.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
 
-import com.fitanywhere.social.model.*;
+import com.fitanywhere.socialpost.model.*;
 
 public class SocialPostServlet extends HttpServlet{
 	

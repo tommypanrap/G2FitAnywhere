@@ -1,4 +1,4 @@
-package com.fitanywhere.social.model;
+package com.fitanywhere.socialpost.model;
 
 import java.util.*;
 import java.sql.*;
@@ -11,7 +11,7 @@ import javax.sql.DataSource;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
-import com.fitanywhere.social.model.SocialPostVO;
+import com.fitanywhere.socialpost.model.SocialPostVO;
 import com.fitanywhere.user.model.UserVO;
 import com.fitanywhere.util.HibernateUtil;
 
@@ -38,26 +38,26 @@ public class SocialPostDAOImpl implements SocialPostDAO{
 	}
 	
 	@Override
-	public void insert(SocialPostVO entity) {
+	public void insert(SocialPostVO socialPostVO) {
 		// 回傳給 service 剛新增成功的自增主鍵值
-		getSession().save(entity);
+		getSession().save(socialPostVO);
 	}
 	
 	@Override
-	public void update(SocialPostVO entity) {
-		getSession().update(entity);
+	public void update(SocialPostVO socialPostVO) {
+		getSession().update(socialPostVO);
 	}
 	
 	
-	@Override
-	public List<SocialPostVO> getAll() {
-		return getSession().createQuery("from social_post", SocialPostVO.class).list();
-	}
-
-	@Override
-	public SocialPostVO findByPrimaryKey(UserVO user) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+//	@Override
+//	public List<SocialPostVO> getAll() {
+//		return getSession().createQuery("from social_post", SocialPostVO.class).list();
+//	}
+//
+//	@Override
+//	public SocialPostVO findByPrimaryKey(Integer spid) {
+//
+//		return getSession().get(SocialPostVO.class, spid);
+//	}
 	
 }
