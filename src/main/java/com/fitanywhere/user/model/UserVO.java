@@ -19,7 +19,7 @@ public class UserVO {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "u_id")
-	private Integer uID;
+	private Integer uId;
 
 	@Column(name = "mood_id")
 	private Integer moodId;
@@ -74,11 +74,11 @@ public class UserVO {
 
 	// Getters and setters 
 	public Integer getuID() {
-		return uID;
+		return uId;
 	}
 
 	public void setuID(Integer uID) {
-		this.uID = uID;
+		this.uId = uID;
 	}
 
 	public Integer getMoodId() {

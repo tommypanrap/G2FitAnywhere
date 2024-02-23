@@ -15,28 +15,28 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 		<!-- Favicon -->
-		<link rel="shortcut icon" type="image/x-icon" href="/THA105G2/assets/images/favicon.png">
+		<link rel="shortcut icon" type="image/x-icon" href="<%= request.getContextPath() %>/assets/images/favicon.png">
 
 		<!-- CSS
         ============================================ -->
-		<link rel="stylesheet" href="/THA105G2/assets/css/vendor/bootstrap.min.css">
-		<link rel="stylesheet" href="/THA105G2/assets/css/vendor/slick.css">
-		<link rel="stylesheet" href="/THA105G2/assets/css/vendor/slick-theme.css">
-		<link rel="stylesheet" href="/THA105G2/assets/css/plugins/sal.css">
-		<link rel="stylesheet" href="/THA105G2/assets/css/plugins/feather.css">
-		<link rel="stylesheet" href="/THA105G2/assets/css/plugins/fontawesome.min.css">
-		<link rel="stylesheet" href="/THA105G2/assets/css/plugins/euclid-circulara.css">
-		<link rel="stylesheet" href="/THA105G2/assets/css/plugins/swiper.css">
-		<link rel="stylesheet" href="/THA105G2/assets/css/plugins/magnify.css">
-		<link rel="stylesheet" href="/THA105G2/assets/css/plugins/odometer.css">
-		<link rel="stylesheet" href="/THA105G2/assets/css/plugins/animation.css">
-		<link rel="stylesheet" href="/THA105G2/assets/css/plugins/bootstrap-select.min.css">
-		<link rel="stylesheet" href="/THA105G2/assets/css/plugins/jquery-ui.css">
-		<link rel="stylesheet" href="/THA105G2/assets/css/plugins/magnigy-popup.min.css">
-		<link rel="stylesheet" href="/THA105G2/assets/css/plugins/plyr.css">
-		<link rel="stylesheet" href="/THA105G2/assets/css/style.css">
-		<link rel="stylesheet" href="/THA105G2/assets/css/style_add.css">
-		<link rel="stylesheet" href="/THA105G2/assets/css/joy/login.css">
+		<link rel="stylesheet" href="<%= request.getContextPath() %>/assets/css/vendor/bootstrap.min.css">
+		<link rel="stylesheet" href="<%= request.getContextPath() %>/assets/css/vendor/slick.css">
+		<link rel="stylesheet" href="<%= request.getContextPath() %>/assets/css/vendor/slick-theme.css">
+		<link rel="stylesheet" href="<%= request.getContextPath() %>/assets/css/plugins/sal.css">
+		<link rel="stylesheet" href="<%= request.getContextPath() %>/assets/css/plugins/feather.css">
+		<link rel="stylesheet" href="<%= request.getContextPath() %>/assets/css/plugins/fontawesome.min.css">
+		<link rel="stylesheet" href="<%= request.getContextPath() %>/assets/css/plugins/euclid-circulara.css">
+		<link rel="stylesheet" href="<%= request.getContextPath() %>/assets/css/plugins/swiper.css">
+		<link rel="stylesheet" href="<%= request.getContextPath() %>/assets/css/plugins/magnify.css">
+		<link rel="stylesheet" href="<%= request.getContextPath() %>/assets/css/plugins/odometer.css">
+		<link rel="stylesheet" href="<%= request.getContextPath() %>/assets/css/plugins/animation.css">
+		<link rel="stylesheet" href="<%= request.getContextPath() %>/assets/css/plugins/bootstrap-select.min.css">
+		<link rel="stylesheet" href="<%= request.getContextPath() %>/assets/css/plugins/jquery-ui.css">
+		<link rel="stylesheet" href="<%= request.getContextPath() %>/assets/css/plugins/magnigy-popup.min.css">
+		<link rel="stylesheet" href="<%= request.getContextPath() %>/assets/css/plugins/plyr.css">
+		<link rel="stylesheet" href="<%= request.getContextPath() %>/assets/css/style.css">
+		<link rel="stylesheet" href="<%= request.getContextPath() %>/assets/css/style_add.css">
+		<link rel="stylesheet" href="<%= request.getContextPath() %>/assets/css/joy/login.css">
 	</head>
 
 	<body class="rbt-header-sticky">
@@ -50,7 +50,7 @@
 						<div class="header-left rbt-header-content">
 							<div class="header-info">
 								<div class="logo">
-									<a href="index.html"> <img src="/THA105G2/assets/images/logo/fitanywherelogo.png"
+									<a href="index.html"> <img src="<%= request.getContextPath() %>/assets/images/logo/fitanywherelogo.png"
 											alt="Education Logo Images">
 									</a>
 								</div>
@@ -99,11 +99,11 @@
                                         
                                         
                                     </li> -->
-									<li><a href=""><img src=".//THA105G2/assets/images/bell.png" alt=""></a></li>
-									<li><a href="./g2-cart.html"><img src=".//THA105G2/assets/images/cart.png"
+									<li><a href=""><img src="./<%= request.getContextPath() %>/assets/images/bell.png" alt=""></a></li>
+									<li><a href="./g2-cart.html"><img src="./<%= request.getContextPath() %>/assets/images/cart.png"
 												alt=""></a>
 									</li>
-									<li><a href=""><img src=".//THA105G2/assets/images/mail.png" alt=""></a></li>
+									<li><a href=""><img src="./<%= request.getContextPath() %>/assets/images/mail.png" alt=""></a></li>
 									<li class="with-megamenu has-menu-child-item position-static mainmenu-sub">
 										<a href="./g2-register.html">登入 / 註冊
 											<!-- <i class="feather-chevron-down"></i> -->
@@ -143,7 +143,7 @@
 				<div class="inner-top">
 					<div class="content">
 						<div class="logo">
-							<a href="index.html"> <img src="/THA105G2/assets/images/logo/logo.png"
+							<a href="index.html"> <img src="<%= request.getContextPath() %>/assets/images/logo/logo.png"
 									alt="Education Logo Images">
 							</a>
 						</div>
@@ -179,7 +179,7 @@
 												<div class="inner">
 													<div class="thumbnail">
 														<a href="01-main-demo.html"><img
-																src="/THA105G2/assets/images/splash/demo/h1.jpg"
+																src="<%= request.getContextPath() %>/assets/images/splash/demo/h1.jpg"
 																alt="Demo Images"></a>
 													</div>
 													<div class="content">
@@ -201,7 +201,7 @@
 												<div class="inner">
 													<div class="thumbnail">
 														<a href="12-marketplace.html"><img
-																src="/THA105G2/assets/images/splash/demo/h12.jpg"
+																src="<%= request.getContextPath() %>/assets/images/splash/demo/h12.jpg"
 																alt="Demo Images"></a>
 													</div>
 													<div class="content">
@@ -222,7 +222,7 @@
 												<div class="inner">
 													<div class="thumbnail">
 														<a href="04-kindergarten.html"><img
-																src="/THA105G2/assets/images/splash/demo/h4.jpg"
+																src="<%= request.getContextPath() %>/assets/images/splash/demo/h4.jpg"
 																alt="Demo Images"></a>
 													</div>
 													<div class="content">
@@ -243,7 +243,7 @@
 												<div class="inner">
 													<div class="thumbnail">
 														<a href="13-university-classic.html"><img
-																src="/THA105G2/assets/images/splash/demo/h13.jpg"
+																src="<%= request.getContextPath() %>/assets/images/splash/demo/h13.jpg"
 																alt="Demo Images"></a>
 													</div>
 													<div class="content">
@@ -266,7 +266,7 @@
 												<div class="inner">
 													<div class="thumbnail">
 														<a href="14-home-elegant.html"><img
-																src="/THA105G2/assets/images/splash/demo/h14.jpg"
+																src="<%= request.getContextPath() %>/assets/images/splash/demo/h14.jpg"
 																alt="Demo Images"></a>
 													</div>
 													<div class="content">
@@ -288,7 +288,7 @@
 												<div class="inner">
 													<div class="thumbnail">
 														<a href="09-gym-coaching.html"><img
-																src="/THA105G2/assets/images/splash/demo/h9.jpg"
+																src="<%= request.getContextPath() %>/assets/images/splash/demo/h9.jpg"
 																alt="Demo Images"></a>
 													</div>
 													<div class="content">
@@ -310,7 +310,7 @@
 												<div class="inner">
 													<div class="thumbnail">
 														<a href="03-online-school.html"><img
-																src="/THA105G2/assets/images/splash/demo/h3.jpg"
+																src="<%= request.getContextPath() %>/assets/images/splash/demo/h3.jpg"
 																alt="Demo Images"></a>
 													</div>
 													<div class="content">
@@ -332,7 +332,7 @@
 												<div class="inner">
 													<div class="thumbnail">
 														<a href="06-university-status.html"><img
-																src="/THA105G2/assets/images/splash/demo/h6.jpg"
+																src="<%= request.getContextPath() %>/assets/images/splash/demo/h6.jpg"
 																alt="Demo Images"></a>
 													</div>
 													<div class="content">
@@ -356,7 +356,7 @@
 												<div class="inner">
 													<div class="thumbnail">
 														<a href="15-home-technology.html"><img
-																src="/THA105G2/assets/images/splash/demo/h15.jpg"
+																src="<%= request.getContextPath() %>/assets/images/splash/demo/h15.jpg"
 																alt="Demo Images"></a>
 													</div>
 													<div class="content">
@@ -378,7 +378,7 @@
 												<div class="inner">
 													<div class="thumbnail">
 														<a href="07-instructor-portfolio.html"><img
-																src="/THA105G2/assets/images/splash/demo/h7.jpg"
+																src="<%= request.getContextPath() %>/assets/images/splash/demo/h7.jpg"
 																alt="Demo Images"></a>
 													</div>
 													<div class="content">
@@ -401,7 +401,7 @@
 												<div class="inner">
 													<div class="thumbnail">
 														<a href="08-language-academy.html"><img
-																src="/THA105G2/assets/images/splash/demo/h8.jpg"
+																src="<%= request.getContextPath() %>/assets/images/splash/demo/h8.jpg"
 																alt="Demo Images"></a>
 													</div>
 													<div class="content">
@@ -423,7 +423,7 @@
 												<div class="inner">
 													<div class="thumbnail">
 														<a href="11-single-course.html"><img
-																src="/THA105G2/assets/images/splash/demo/h11.jpg"
+																src="<%= request.getContextPath() %>/assets/images/splash/demo/h11.jpg"
 																alt="Demo Images"></a>
 													</div>
 													<div class="content">
@@ -445,7 +445,7 @@
 												<div class="inner">
 													<div class="thumbnail">
 														<a href="10-online-course.html"><img
-																src="/THA105G2/assets/images/splash/demo/h10.jpg"
+																src="<%= request.getContextPath() %>/assets/images/splash/demo/h10.jpg"
 																alt="Demo Images"></a>
 													</div>
 													<div class="content">
@@ -467,7 +467,7 @@
 												<div class="inner">
 													<div class="thumbnail">
 														<a href="05-classic-lms.html"><img
-																src="/THA105G2/assets/images/splash/demo/h5.jpg"
+																src="<%= request.getContextPath() %>/assets/images/splash/demo/h5.jpg"
 																alt="Demo Images"></a>
 													</div>
 													<div class="content">
@@ -489,7 +489,7 @@
 												<div class="inner">
 													<div class="thumbnail">
 														<a href="02-course-school.html"><img
-																src="/THA105G2/assets/images/splash/demo/h2.jpg"
+																src="<%= request.getContextPath() %>/assets/images/splash/demo/h2.jpg"
 																alt="Demo Images"></a>
 													</div>
 													<div class="content">
@@ -511,7 +511,7 @@
 												<div class="inner">
 													<div class="thumbnail">
 														<a href="#"><img
-																src="/THA105G2/assets/images/splash/demo/coming-soon-1.png"
+																src="<%= request.getContextPath() %>/assets/images/splash/demo/coming-soon-1.png"
 																alt="Demo Images"></a>
 													</div>
 													<div class="content">
@@ -532,7 +532,7 @@
 												<div class="inner">
 													<div class="thumbnail">
 														<a href="#"><img
-																src="/THA105G2/assets/images/splash/demo/coming-soon-2.png"
+																src="<%= request.getContextPath() %>/assets/images/splash/demo/coming-soon-2.png"
 																alt="Demo Images"></a>
 													</div>
 													<div class="content">
@@ -553,7 +553,7 @@
 												<div class="inner">
 													<div class="thumbnail">
 														<a href="#"><img
-																src="/THA105G2/assets/images/splash/demo/coming-soon-3.png"
+																src="<%= request.getContextPath() %>/assets/images/splash/demo/coming-soon-3.png"
 																alt="Demo Images"></a>
 													</div>
 													<div class="content">
@@ -758,7 +758,7 @@
 												<div class="nav-category-item">
 													<div class="thumbnail">
 														<div class="image">
-															<img src="/THA105G2/assets/images/course/category-2.png"
+															<img src="<%= request.getContextPath() %>/assets/images/course/category-2.png"
 																alt="Course images">
 														</div>
 														<a href="course-filter-one-toggle.html">
@@ -773,7 +773,7 @@
 												<div class="nav-category-item">
 													<div class="thumbnail">
 														<div class="image">
-															<img src="/THA105G2/assets/images/course/category-1.png"
+															<img src="<%= request.getContextPath() %>/assets/images/course/category-1.png"
 																alt="Course images">
 														</div>
 														<a href="course-filter-one-toggle.html">
@@ -788,7 +788,7 @@
 												<div class="nav-category-item">
 													<div class="thumbnail">
 														<div class="image">
-															<img src="/THA105G2/assets/images/course/category-4.png"
+															<img src="<%= request.getContextPath() %>/assets/images/course/category-4.png"
 																alt="Course images">
 														</div>
 														<a href="course-filter-one-toggle.html">
@@ -814,7 +814,7 @@
 												<div class="nav-category-item">
 													<div class="thumbnail">
 														<div class="image">
-															<img src="/THA105G2/assets/images/course/category-9.png"
+															<img src="<%= request.getContextPath() %>/assets/images/course/category-9.png"
 																alt="Course images">
 														</div>
 														<a href="course-filter-one-toggle.html">
@@ -950,7 +950,7 @@
 										<div class="col-lg-12 col-xl-4 col-xxl-4 single-mega-item">
 											<div class="rbt-ads-wrapper">
 												<a class="d-block" href="#"><img
-														src="/THA105G2/assets/images/service/mobile-cat.jpg"
+														src="<%= request.getContextPath() %>/assets/images/service/mobile-cat.jpg"
 														alt="Education Images"></a>
 											</div>
 										</div>
@@ -1004,7 +1004,7 @@
 					<ul class="rbt-minicart-wrapper">
 						<li class="minicart-item">
 							<div class="thumbnail">
-								<a href="#"> <img src="/THA105G2/assets/images/product/1.jpg" alt="Product Images">
+								<a href="#"> <img src="<%= request.getContextPath() %>/assets/images/product/1.jpg" alt="Product Images">
 								</a>
 							</div>
 							<div class="product-content">
@@ -1023,7 +1023,7 @@
 
 						<li class="minicart-item">
 							<div class="thumbnail">
-								<a href="#"> <img src="/THA105G2/assets/images/product/7.jpg" alt="Product Images">
+								<a href="#"> <img src="<%= request.getContextPath() %>/assets/images/product/7.jpg" alt="Product Images">
 								</a>
 							</div>
 							<div class="product-content">
@@ -1042,7 +1042,7 @@
 
 						<li class="minicart-item">
 							<div class="thumbnail">
-								<a href="#"> <img src="/THA105G2/assets/images/product/3.jpg" alt="Product Images">
+								<a href="#"> <img src="<%= request.getContextPath() %>/assets/images/product/3.jpg" alt="Product Images">
 								</a>
 							</div>
 							<div class="product-content">
@@ -1061,7 +1061,7 @@
 
 						<li class="minicart-item">
 							<div class="thumbnail">
-								<a href="#"> <img src="/THA105G2/assets/images/product/4.jpg" alt="Product Images">
+								<a href="#"> <img src="<%= request.getContextPath() %>/assets/images/product/4.jpg" alt="Product Images">
 								</a>
 							</div>
 							<div class="product-content">
@@ -1145,8 +1145,8 @@
 							<!-- <a href="#"><div class="third-login"> <img src="https://cdn1.iconfinder.com/data/icons/google-s-logo/150/Google_Icons-09-512.png" alt=""> 使用Google登入</div></a>
                             <hr class="hr"> -->
 
-							<form class="max-width-auto" method="post" action="/THA105G2/user_controller">
-								<input type="hidden" name="requestType" value="login">
+							<form class="max-width-auto" method="post" action="<%= request.getContextPath() %>/user_controller">
+								<input type="hidden" name="requestType" value="userLogin">
 								<div class="form-group">
 									<input name="u_email" type="email" required />
 									<label>帳號(請輸入E-Mail)</label>
@@ -1183,7 +1183,7 @@
 							</form>
 							<div class="margin">
 								<span class="margin-right-10px">還沒有建立新帳號?</span><a
-									href="/THA105G2/user/user_register.html">註冊</a>
+									href="<%= request.getContextPath() %>/user/user_register.html">註冊</a>
 							</div>
 						</div>
 					</div>
@@ -1254,38 +1254,84 @@
 		<!-- JS
     ============================================ -->
 		<!-- Modernizer JS -->
-		<script src="/THA105G2/assets/js/vendor/modernizr.min.js"></script>
+		<script src="<%= request.getContextPath() %>/assets/js/vendor/modernizr.min.js"></script>
 		<!-- jQuery JS -->
-		<script src="/THA105G2/assets/js/vendor/jquery.js"></script>
+		<script src="<%= request.getContextPath() %>/assets/js/vendor/jquery.js"></script>
 		<!-- Bootstrap JS -->
-		<script src="/THA105G2/assets/js/vendor/bootstrap.min.js"></script>
+		<script src="<%= request.getContextPath() %>/assets/js/vendor/bootstrap.min.js"></script>
 		<!-- sal.js -->
-		<script src="/THA105G2/assets/js/vendor/sal.js"></script>
-		<script src="/THA105G2/assets/js/vendor/swiper.js"></script>
-		<script src="/THA105G2/assets/js/vendor/magnify.min.js"></script>
-		<script src="/THA105G2/assets/js/vendor/jquery-appear.js"></script>
-		<script src="/THA105G2/assets/js/vendor/odometer.js"></script>
-		<script src="/THA105G2/assets/js/vendor/backtotop.js"></script>
-		<script src="/THA105G2/assets/js/vendor/isotop.js"></script>
-		<script src="/THA105G2/assets/js/vendor/imageloaded.js"></script>
+		<script src="<%= request.getContextPath() %>/assets/js/vendor/sal.js"></script>
+		<script src="<%= request.getContextPath() %>/assets/js/vendor/swiper.js"></script>
+		<script src="<%= request.getContextPath() %>/assets/js/vendor/magnify.min.js"></script>
+		<script src="<%= request.getContextPath() %>/assets/js/vendor/jquery-appear.js"></script>
+		<script src="<%= request.getContextPath() %>/assets/js/vendor/odometer.js"></script>
+		<script src="<%= request.getContextPath() %>/assets/js/vendor/backtotop.js"></script>
+		<script src="<%= request.getContextPath() %>/assets/js/vendor/isotop.js"></script>
+		<script src="<%= request.getContextPath() %>/assets/js/vendor/imageloaded.js"></script>
 
-		<script src="/THA105G2/assets/js/vendor/wow.js"></script>
-		<script src="/THA105G2/assets/js/vendor/waypoint.min.js"></script>
-		<script src="/THA105G2/assets/js/vendor/easypie.js"></script>
-		<script src="/THA105G2/assets/js/vendor/text-type.js"></script>
-		<script src="/THA105G2/assets/js/vendor/jquery-one-page-nav.js"></script>
-		<script src="/THA105G2/assets/js/vendor/bootstrap-select.min.js"></script>
-		<script src="/THA105G2/assets/js/vendor/jquery-ui.js"></script>
-		<script src="/THA105G2/assets/js/vendor/magnify-popup.min.js"></script>
-		<script src="/THA105G2/assets/js/vendor/paralax-scroll.js"></script>
-		<script src="/THA105G2/assets/js/vendor/paralax.min.js"></script>
-		<script src="/THA105G2/assets/js/vendor/countdown.js"></script>
-		<script src="/THA105G2/assets/js/vendor/plyr.js"></script>
+		<script src="<%= request.getContextPath() %>/assets/js/vendor/wow.js"></script>
+		<script src="<%= request.getContextPath() %>/assets/js/vendor/waypoint.min.js"></script>
+		<script src="<%= request.getContextPath() %>/assets/js/vendor/easypie.js"></script>
+		<script src="<%= request.getContextPath() %>/assets/js/vendor/text-type.js"></script>
+		<script src="<%= request.getContextPath() %>/assets/js/vendor/jquery-one-page-nav.js"></script>
+		<script src="<%= request.getContextPath() %>/assets/js/vendor/bootstrap-select.min.js"></script>
+		<script src="<%= request.getContextPath() %>/assets/js/vendor/jquery-ui.js"></script>
+		<script src="<%= request.getContextPath() %>/assets/js/vendor/magnify-popup.min.js"></script>
+		<script src="<%= request.getContextPath() %>/assets/js/vendor/paralax-scroll.js"></script>
+		<script src="<%= request.getContextPath() %>/assets/js/vendor/paralax.min.js"></script>
+		<script src="<%= request.getContextPath() %>/assets/js/vendor/countdown.js"></script>
+		<script src="<%= request.getContextPath() %>/assets/js/vendor/plyr.js"></script>
 		<!-- Main JS -->
-		<script src="/THA105G2/assets/js/main.js"></script>
+		<script src="<%= request.getContextPath() %>/assets/js/main.js"></script>
 
 		<!-- ======================================== -->
 		<!-- Eugen -->
+
+		<!-- ========================= -->
+		<!-- 會員輸入email時預查是否存在此會員 -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script>
+			$(document).ready(function () {
+				$('input[name="u_email"]').on('blur', function () {
+					var email = $(this).val();
+					if (email.trim() !== '') {
+						if (validateEmail(email)) {
+							// 驗證通過，發送AJAX請求
+							$.ajax({
+								type: 'POST',
+								url: '<%= request.getContextPath() %>/user_controller',
+								data: {
+									requestType: 'userCheck',
+									u_email: email
+								},
+								success: function (response) {
+									if (response === '0') {
+										// 會員存在，無須動作
+										console.log('會員存在');
+									} else if (response === '1') {
+										// 會員不存在，提示用戶重新輸入
+										console.log('會員不存在');
+										alert('此電子信箱並未註冊, 請重新輸入已註冊的會員信箱或註冊本站帳號!');
+										$('input[name="u_email"]').val('');
+									}
+								}
+							});
+						} else {
+							// 郵箱格式不正確
+							alert('請輸入正確的電子信箱!');
+							$('input[name="u_email"]').val('');
+						}
+					}
+				});
+
+				function validateEmail(email) {
+					var re = /\S+@\S+\.\S+/;
+					return re.test(email);
+				}
+			});
+		</script>		
+
+		<!-- ======================================== -->
 
 		<!-- 若是註冊完跳轉過來 session會觸發通知 -->
 		<%@ page import="javax.servlet.http.HttpSession" %>
@@ -1299,11 +1345,7 @@
 				<% } %>
 
 
-
-
-
-
-					<!-- ========================= -->
+					<!-- ======================================== -->
 
 
 	</body>

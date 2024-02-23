@@ -12,30 +12,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
     <!-- Favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="/THA105G2/assets/images/favicon.png" />
+    <link rel="shortcut icon" type="image/x-icon" href="<%= request.getContextPath() %>/assets/images/favicon.png" />
 
     <!-- CSS
         ============================================ -->
-    <link rel="stylesheet" href="/THA105G2/assets/css/vendor/bootstrap.min.css" />
-    <link rel="stylesheet" href="/THA105G2/assets/css/vendor/slick.css" />
-    <link rel="stylesheet" href="/THA105G2/assets/css/vendor/slick-theme.css" />
-    <link rel="stylesheet" href="/THA105G2/assets/css/plugins/sal.css" />
-    <link rel="stylesheet" href="/THA105G2/assets/css/plugins/feather.css" />
-    <link rel="stylesheet" href="/THA105G2/assets/css/plugins/fontawesome.min.css" />
-    <link rel="stylesheet" href="/THA105G2/assets/css/plugins/euclid-circulara.css" />
-    <link rel="stylesheet" href="/THA105G2/assets/css/plugins/swiper.css" />
-    <link rel="stylesheet" href="/THA105G2/assets/css/plugins/magnify.css" />
-    <link rel="stylesheet" href="/THA105G2/assets/css/plugins/odometer.css" />
-    <link rel="stylesheet" href="/THA105G2/assets/css/plugins/animation.css" />
-    <link rel="stylesheet" href="/THA105G2/assets/css/plugins/bootstrap-select.min.css" />
-    <link rel="stylesheet" href="/THA105G2/assets/css/plugins/jquery-ui.css" />
-    <link rel="stylesheet" href="/THA105G2/assets/css/plugins/magnigy-popup.min.css" />
-    <link rel="stylesheet" href="/THA105G2/assets/css/plugins/plyr.css" />
-    <link rel="stylesheet" href="/THA105G2/assets/css/style.css" />
-    <link rel="stylesheet" href="/THA105G2/assets/css/style_add.css" />
-    <link rel="stylesheet" href="/THA105G2/assets/css/joy/register.css" />
-    <link rel="stylesheet" href="/THA105G2/assets/css/mok/mok_opinion.css" />
-    <link rel="stylesheet" href="/THA105G2/assets/css/register-verify.css" />
+    <link rel="stylesheet" href="<%= request.getContextPath() %>/assets/css/vendor/bootstrap.min.css" />
+    <link rel="stylesheet" href="<%= request.getContextPath() %>/assets/css/vendor/slick.css" />
+    <link rel="stylesheet" href="<%= request.getContextPath() %>/assets/css/vendor/slick-theme.css" />
+    <link rel="stylesheet" href="<%= request.getContextPath() %>/assets/css/plugins/sal.css" />
+    <link rel="stylesheet" href="<%= request.getContextPath() %>/assets/css/plugins/feather.css" />
+    <link rel="stylesheet" href="<%= request.getContextPath() %>/assets/css/plugins/fontawesome.min.css" />
+    <link rel="stylesheet" href="<%= request.getContextPath() %>/assets/css/plugins/euclid-circulara.css" />
+    <link rel="stylesheet" href="<%= request.getContextPath() %>/assets/css/plugins/swiper.css" />
+    <link rel="stylesheet" href="<%= request.getContextPath() %>/assets/css/plugins/magnify.css" />
+    <link rel="stylesheet" href="<%= request.getContextPath() %>/assets/css/plugins/odometer.css" />
+    <link rel="stylesheet" href="<%= request.getContextPath() %>/assets/css/plugins/animation.css" />
+    <link rel="stylesheet" href="<%= request.getContextPath() %>/assets/css/plugins/bootstrap-select.min.css" />
+    <link rel="stylesheet" href="<%= request.getContextPath() %>/assets/css/plugins/jquery-ui.css" />
+    <link rel="stylesheet" href="<%= request.getContextPath() %>/assets/css/plugins/magnigy-popup.min.css" />
+    <link rel="stylesheet" href="<%= request.getContextPath() %>/assets/css/plugins/plyr.css" />
+    <link rel="stylesheet" href="<%= request.getContextPath() %>/assets/css/style.css" />
+    <link rel="stylesheet" href="<%= request.getContextPath() %>/assets/css/style_add.css" />
+    <link rel="stylesheet" href="<%= request.getContextPath() %>/assets/css/joy/register.css" />
+    <link rel="stylesheet" href="<%= request.getContextPath() %>/assets/css/mok/mok_opinion.css" />
+    <link rel="stylesheet" href="<%= request.getContextPath() %>/assets/css/register-verify.css" />
     <style>
       .hidden {
         display: none;
@@ -58,7 +58,7 @@
               <div class="header-info">
                 <div class="logo">
                   <a href="index.html">
-                    <img src="/THA105G2/assets/images/logo/fitanywherelogo.png" alt="Education Logo Images" />
+                    <img src="<%= request.getContextPath() %>/assets/images/logo/fitanywherelogo.png" alt="Education Logo Images" />
                   </a>
                 </div>
               </div>
@@ -83,14 +83,14 @@
                   </li>
 
                   <li class="not-hamber">
-                    <a href=""><img src=".//THA105G2/assets/images/bell.png" alt="" /></a>
+                    <a href=""><img src="./<%= request.getContextPath() %>/assets/images/bell.png" alt="" /></a>
                   </li>
                   <li class="not-hamber">
-                    <a href="./g2-cart.html"><img src=".//THA105G2/assets/images/cart.png" alt="" /></a>
+                    <a href="./g2-cart.html"><img src="./<%= request.getContextPath() %>/assets/images/cart.png" alt="" /></a>
                   </li>
                   <li class="not-hamber">
                     <a href="" class="button_model feed_back">
-                      <img src=".//THA105G2/assets/images/mail.png" alt="" />
+                      <img src="./<%= request.getContextPath() %>/assets/images/mail.png" alt="" />
                     </a>
                     <div id="lightbox" class="none">
                       <form action="">
@@ -161,7 +161,7 @@
             <li class="minicart-item">
               <div class="thumbnail">
                 <a href="#">
-                  <img src="/THA105G2/assets/images/product/1.jpg" alt="Product Images" />
+                  <img src="<%= request.getContextPath() %>/assets/images/product/1.jpg" alt="Product Images" />
                 </a>
               </div>
               <div class="product-content">
@@ -179,7 +179,7 @@
             <li class="minicart-item">
               <div class="thumbnail">
                 <a href="#">
-                  <img src="/THA105G2/assets/images/product/7.jpg" alt="Product Images" />
+                  <img src="<%= request.getContextPath() %>/assets/images/product/7.jpg" alt="Product Images" />
                 </a>
               </div>
               <div class="product-content">
@@ -197,7 +197,7 @@
             <li class="minicart-item">
               <div class="thumbnail">
                 <a href="#">
-                  <img src="/THA105G2/assets/images/product/3.jpg" alt="Product Images" />
+                  <img src="<%= request.getContextPath() %>/assets/images/product/3.jpg" alt="Product Images" />
                 </a>
               </div>
               <div class="product-content">
@@ -215,7 +215,7 @@
             <li class="minicart-item">
               <div class="thumbnail">
                 <a href="#">
-                  <img src="/THA105G2/assets/images/product/4.jpg" alt="Product Images" />
+                  <img src="<%= request.getContextPath() %>/assets/images/product/4.jpg" alt="Product Images" />
                 </a>
               </div>
               <div class="product-content">
@@ -289,7 +289,8 @@
       <form id="verificationForm" action="" method="post">
         <article>
           <div class="article-inner-wrapper">
-            <h1>請輸入驗證碼</h1>
+            <h2>驗證碼已寄到您的註冊信箱</h2>
+            <h4>(請在15分鐘內輸入驗證碼)</h4>
             <div>
               <div class="verificationCodeBox article-inner-wrapper-number-input">
                 <input type="text" id="verificationCode1" maxlength="1" />
@@ -325,7 +326,7 @@
           <div class="col-lg-6">
             <div class="rbt-contact-form contact-form-style-1 max-width-auto">
               <h3 class="title">註冊</h3>
-              <form class="registerForm max-width-auto" method="post" action="/THA105G2/user_controller">
+              <form class="registerForm max-width-auto" method="post" action="<%= request.getContextPath() %>/user_controller">
                 <input type="hidden" name="requestType" value="registerForm" />
 
                 <div class="form-group">
@@ -423,38 +424,38 @@
     <!-- JS
     ============================================ -->
     <!-- Modernizer JS -->
-    <script src="/THA105G2/assets/js/vendor/modernizr.min.js"></script>
+    <script src="<%= request.getContextPath() %>/assets/js/vendor/modernizr.min.js"></script>
     <!-- jQuery JS -->
-    <script src="/THA105G2/assets/js/vendor/jquery.js"></script>
+    <script src="<%= request.getContextPath() %>/assets/js/vendor/jquery.js"></script>
     <!-- Bootstrap JS -->
-    <script src="/THA105G2/assets/js/vendor/bootstrap.min.js"></script>
+    <script src="<%= request.getContextPath() %>/assets/js/vendor/bootstrap.min.js"></script>
     <!-- sal.js -->
-    <script src="/THA105G2/assets/js/vendor/sal.js"></script>
-    <script src="/THA105G2/assets/js/vendor/swiper.js"></script>
-    <script src="/THA105G2/assets/js/vendor/magnify.min.js"></script>
-    <script src="/THA105G2/assets/js/vendor/jquery-appear.js"></script>
-    <script src="/THA105G2/assets/js/vendor/odometer.js"></script>
-    <script src="/THA105G2/assets/js/vendor/backtotop.js"></script>
-    <script src="/THA105G2/assets/js/vendor/isotop.js"></script>
-    <script src="/THA105G2/assets/js/vendor/imageloaded.js"></script>
+    <script src="<%= request.getContextPath() %>/assets/js/vendor/sal.js"></script>
+    <script src="<%= request.getContextPath() %>/assets/js/vendor/swiper.js"></script>
+    <script src="<%= request.getContextPath() %>/assets/js/vendor/magnify.min.js"></script>
+    <script src="<%= request.getContextPath() %>/assets/js/vendor/jquery-appear.js"></script>
+    <script src="<%= request.getContextPath() %>/assets/js/vendor/odometer.js"></script>
+    <script src="<%= request.getContextPath() %>/assets/js/vendor/backtotop.js"></script>
+    <script src="<%= request.getContextPath() %>/assets/js/vendor/isotop.js"></script>
+    <script src="<%= request.getContextPath() %>/assets/js/vendor/imageloaded.js"></script>
 
-    <script src="/THA105G2/assets/js/vendor/wow.js"></script>
-    <script src="/THA105G2/assets/js/vendor/waypoint.min.js"></script>
-    <script src="/THA105G2/assets/js/vendor/easypie.js"></script>
-    <script src="/THA105G2/assets/js/vendor/text-type.js"></script>
-    <script src="/THA105G2/assets/js/vendor/jquery-one-page-nav.js"></script>
-    <script src="/THA105G2/assets/js/vendor/bootstrap-select.min.js"></script>
-    <script src="/THA105G2/assets/js/vendor/jquery-ui.js"></script>
-    <script src="/THA105G2/assets/js/vendor/magnify-popup.min.js"></script>
-    <script src="/THA105G2/assets/js/vendor/paralax-scroll.js"></script>
-    <script src="/THA105G2/assets/js/vendor/paralax.min.js"></script>
-    <script src="/THA105G2/assets/js/vendor/countdown.js"></script>
-    <script src="/THA105G2/assets/js/vendor/plyr.js"></script>
+    <script src="<%= request.getContextPath() %>/assets/js/vendor/wow.js"></script>
+    <script src="<%= request.getContextPath() %>/assets/js/vendor/waypoint.min.js"></script>
+    <script src="<%= request.getContextPath() %>/assets/js/vendor/easypie.js"></script>
+    <script src="<%= request.getContextPath() %>/assets/js/vendor/text-type.js"></script>
+    <script src="<%= request.getContextPath() %>/assets/js/vendor/jquery-one-page-nav.js"></script>
+    <script src="<%= request.getContextPath() %>/assets/js/vendor/bootstrap-select.min.js"></script>
+    <script src="<%= request.getContextPath() %>/assets/js/vendor/jquery-ui.js"></script>
+    <script src="<%= request.getContextPath() %>/assets/js/vendor/magnify-popup.min.js"></script>
+    <script src="<%= request.getContextPath() %>/assets/js/vendor/paralax-scroll.js"></script>
+    <script src="<%= request.getContextPath() %>/assets/js/vendor/paralax.min.js"></script>
+    <script src="<%= request.getContextPath() %>/assets/js/vendor/countdown.js"></script>
+    <script src="<%= request.getContextPath() %>/assets/js/vendor/plyr.js"></script>
     <!-- Main JS -->
-    <script src="/THA105G2/assets/js/main.js"></script>
+    <script src="<%= request.getContextPath() %>/assets/js/main.js"></script>
 
-    <script src="/THA105G2/assets/js/mok/mok_opinion.js"></script>
-    <script src="/THA105G2/assets/js/register_verify.js"></script>
+    <script src="<%= request.getContextPath() %>/assets/js/mok/mok_opinion.js"></script>
+    <script src="<%= request.getContextPath() %>/assets/js/register_verify.js"></script>
     <!-- =================================================== -->
     <!-- Eugen -->
     <script>
@@ -619,7 +620,7 @@
         if (value !== "") {
           // 發送AJAX請求
           $.ajax({
-            url: "/THA105G2/user_controller",
+            url: "<%= request.getContextPath() %>/user_controller",
             type: "POST",
             data: {
               requestType: "checkDuplicate",
@@ -726,7 +727,7 @@
           urlEncodedData = urlEncodedDataPairs.join("&").replace(/%20/g, "+");
 
           // 發送AJAX請求
-          fetch("/THA105G2/user_controller", {
+          fetch("<%= request.getContextPath() %>/user_controller", {
             method: "POST",
             headers: {
               "Content-Type": "application/x-www-form-urlencoded",
@@ -768,7 +769,7 @@
           // FormData轉URL編碼
           let urlEncodedData = new URLSearchParams(formData).toString();
 
-          fetch("/THA105G2/user_controller", {
+          fetch("<%= request.getContextPath() %>/user_controller", {
             method: "POST",
             headers: {
               "Content-Type": "application/x-www-form-urlencoded",
@@ -782,7 +783,7 @@
                 inputs.forEach(input => input.value = "");
               } else if (data === "0") {
                 // 註冊成功，重定向到登入頁面
-                window.location.href = "/THA105G2/front-end/user/user_login.jsp";
+                window.location.href = "<%= request.getContextPath() %>/front-end/user/user_login.jsp";
               }
             })
             .catch(error => console.error("Error:", error));
