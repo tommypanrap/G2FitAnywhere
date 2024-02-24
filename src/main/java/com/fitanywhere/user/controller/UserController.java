@@ -46,6 +46,8 @@ public class UserController extends HttpServlet {
 			checkDuplicate(request, response);
 		} else if ("verificationMail".equals(requestType)) {
 			checkVerificationCode(request, response);
+		} else if ("resendVerificationMail".equals(requestType)) {
+			resendVerificationMail(request, response);
 		} else if ("userCheck".equals(requestType)) {
 			userCheck(request, response);
 		} else if ("userLogin".equals(requestType)) {
@@ -114,9 +116,9 @@ public class UserController extends HttpServlet {
 
 		// 將數據存儲到Session中
 		userService.storeRegistrationData(session, uName, uNickname, uBirth, uPhone, uMail, uPassword, uGender);
-		// 生成亂數驗證碼返回並寫入Reids		
+		// 生成亂數驗證碼返回並寫入Reids
 		String verificationCode = userService.setVerificationCodeInRedis(uMail);
-		// 將驗證碼繼送給會員		
+		// 將驗證碼繼送給會員
 		userService.sendVerificationMail(uMail, verificationCode);
 
 //		本機測試驗證流程不使用實際驗證信時使用
@@ -131,12 +133,28 @@ public class UserController extends HttpServlet {
 
 //	==============================================
 
+//	註冊-讀取Session資訊並重新發送驗證信
+
+	protected void resendVerificationMail(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
+		HttpSession session = request.getSession();
+		String uMailFromSession = (String) session.getAttribute("uMail");
+		// 生成亂數驗證碼返回並寫入Reids
+		String verificationCode = userService.setVerificationCodeInRedis(uMailFromSession);
+		// 將驗證碼繼送給會員
+		userService.sendVerificationMail(uMailFromSession, verificationCode);
+
+	}
+
+//	==============================================
+
 //  註冊-會員輸入驗證碼的比對
 	protected void checkVerificationCode(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
 		HttpSession session = request.getSession();
-		
+
 		String verificationCodeFromRequest = request.getParameter("verificationCode");
 		System.out.println("輸入驗證碼為: " + verificationCodeFromRequest);
 

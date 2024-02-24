@@ -58,7 +58,8 @@
               <div class="header-info">
                 <div class="logo">
                   <a href="index.html">
-                    <img src="<%= request.getContextPath() %>/assets/images/logo/fitanywherelogo.png" alt="Education Logo Images" />
+                    <img src="<%= request.getContextPath() %>/assets/images/logo/fitanywherelogo.png"
+                      alt="Education Logo Images" />
                   </a>
                 </div>
               </div>
@@ -86,7 +87,8 @@
                     <a href=""><img src="./<%= request.getContextPath() %>/assets/images/bell.png" alt="" /></a>
                   </li>
                   <li class="not-hamber">
-                    <a href="./g2-cart.html"><img src="./<%= request.getContextPath() %>/assets/images/cart.png" alt="" /></a>
+                    <a href="./g2-cart.html"><img src="./<%= request.getContextPath() %>/assets/images/cart.png"
+                        alt="" /></a>
                   </li>
                   <li class="not-hamber">
                     <a href="" class="button_model feed_back">
@@ -309,10 +311,10 @@
             </div>
 
             <div class="article-inner-wrapper-verify-mistake">
-              <p>重新寄送驗證碼（暫時沒做）</p>
+              <p>如未收到信件請使用下方按鈕重新發送驗證信</p>
               <div class="resend">
                 <!-- 更新寄送鏈接為按鈕動作 -->
-                <button type="button" id="resendVerificationCode">寄送</button>
+                <button type="button" id="resendVerificationCode">重新寄送驗證信</button>
               </div>
             </div>
           </div>
@@ -326,7 +328,8 @@
           <div class="col-lg-6">
             <div class="rbt-contact-form contact-form-style-1 max-width-auto">
               <h3 class="title">註冊</h3>
-              <form class="registerForm max-width-auto" method="post" action="<%= request.getContextPath() %>/user_controller">
+              <form class="registerForm max-width-auto" method="post"
+                action="<%= request.getContextPath() %>/user_controller">
                 <input type="hidden" name="requestType" value="registerForm" />
 
                 <div class="form-group">
@@ -530,7 +533,10 @@
               break;
             case 'u_birth':
               isValid = checkBirthDate(value);
-              if (!isValid) alert('本站僅限年滿18歲成年人註冊!');
+              if (!isValid) {
+                alert('本站僅限年滿18歲成年人註冊!');
+                document.getElementById('u_birth').value = '';
+              }
               break;
             default:
               break;
@@ -632,7 +638,7 @@
               if (response === "true") {
                 // 若回傳true，表示重複
                 console.log("重複檢查結果: 重複");
-                alert("此" + getFieldLabel(fieldId) + "已有人使用, 請重新輸入!");
+                alert("此" + getFieldLabel(fieldId) + "已有人註冊, 請重新輸入或改為登入網站!");
                 // 清空對應的欄位
                 $("#" + fieldId).val("");
               } else {
@@ -682,27 +688,6 @@
       }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     </script>
 
 
@@ -744,10 +729,42 @@
               document
                 .getElementById("lightbox-verify")
                 .classList.remove("hidden");
-              console.log(data); // 處理服務器回應的數據
+              console.log(data); // 處理服務器回應的數據             
             })
             .catch((error) => console.error("發生錯誤:", error));
         });
+
+      // ===================================================================  
+      // 處理按鈕"重新寄送驗證信"
+
+      document.getElementById("resendVerificationCode").addEventListener("click", function () {
+        var button = this; // 獲取當前按鈕
+        button.disabled = true; // 立即禁用按鈕，防止重複點擊
+
+        // 準備發送的數據
+        var data = "requestType=resendVerificationMail";
+
+        // 發送POST請求
+        fetch("<%= request.getContextPath() %>/user_controller", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/x-www-form-urlencoded",
+          },
+          body: data
+        }).catch(error => {
+          console.error("Error:", error);
+        });
+
+        // 請求發送後的操作，因為後端不回應，所以直接進行操作
+        alert("驗證信已重新寄送到您的信箱, 請輸入新的驗證碼!");
+
+        // 按鈕隱藏或永久禁用，根據需求選擇一種
+        // button.style.display = 'none'; // 如果想要隱藏按鈕
+        // 或者保持按鈕禁用狀態，按鈕已經被設為disabled
+      });
+
+
+
 
 
       // ===================================================================  
@@ -809,8 +826,16 @@
         });
       });
 
+      // ===================================================================
+      // 重新寄送驗證碼
+
+
+
+
 
     </script>
+
+
     <!-- =================================================== -->
   </body>
 

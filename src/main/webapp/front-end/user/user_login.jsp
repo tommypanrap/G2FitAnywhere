@@ -1183,7 +1183,7 @@
 							</form>
 							<div class="margin">
 								<span class="margin-right-10px">還沒有建立新帳號?</span><a
-									href="<%= request.getContextPath() %>/user/user_register.html">註冊</a>
+									href="<%= request.getContextPath() %>/user/user_register.jsp">註冊</a>
 							</div>
 						</div>
 					</div>
