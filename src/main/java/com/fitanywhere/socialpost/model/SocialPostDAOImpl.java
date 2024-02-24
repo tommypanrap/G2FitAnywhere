@@ -49,15 +49,15 @@ public class SocialPostDAOImpl implements SocialPostDAO{
 	}
 	
 	
-//	@Override
-//	public List<SocialPostVO> getAll() {
-//		return getSession().createQuery("from social_post", SocialPostVO.class).list();
-//	}
-//
-//	@Override
-//	public SocialPostVO findByPrimaryKey(Integer spid) {
-//
-//		return getSession().get(SocialPostVO.class, spid);
-//	}
+	@Override
+	public List<SocialPostVO> getAll() {
+		return getSession().createQuery("from social_post", SocialPostVO.class).list();
+	}
+
+	@Override
+	public SocialPostVO findByPrimaryKey(Integer spid) {
+
+		return getSession().get(SocialPostVO.class, spid);
+	}
 	
 }
