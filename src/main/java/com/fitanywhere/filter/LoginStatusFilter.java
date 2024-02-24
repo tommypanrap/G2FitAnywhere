@@ -14,8 +14,10 @@ import javax.servlet.http.HttpSession;
 import java.net.URLEncoder;
 
 // 此Filter會檢測會員登入狀態 若未登入則強制跳轉登入畫面 並且在登入畫面觸發Alert告訴使用者須先登入
-// 請在下方自行放入要過濾的網址
-@WebFilter("/front-end/xxx/xxxxx.jsp")
+// 請在下方自行放入要過濾的網址 
+// @WebFilter(urlPatterns = {"/secured/*", "/api/*", "/admin/*"})
+
+@WebFilter(urlPatterns = {"/front-end/xxxx/xxx.jsp", "/front-end/xxxx/xxx.jsp"})
 public class LoginStatusFilter implements Filter {
 
     @Override
