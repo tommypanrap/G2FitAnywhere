@@ -8,6 +8,6 @@ import com.fitanywhere.user.model.UserVO;
 public interface SocialPostDAO {
 	public void insert(SocialPostVO socialPostVO);
 	public void update(SocialPostVO socialPostVO);
-//	public SocialPostVO findByPrimaryKey(Integer spid);
-//	public List<SocialPostVO> getAll();
+	public SocialPostVO findByPrimaryKey(Integer spid);
+	public List<SocialPostVO> getAll();
 }
