@@ -50,7 +50,8 @@
 						<div class="header-left rbt-header-content">
 							<div class="header-info">
 								<div class="logo">
-									<a href="index.html"> <img src="<%= request.getContextPath() %>/assets/images/logo/fitanywherelogo.png"
+									<a href="index.html"> <img
+											src="<%= request.getContextPath() %>/assets/images/logo/fitanywherelogo.png"
 											alt="Education Logo Images">
 									</a>
 								</div>
@@ -99,11 +100,14 @@
                                         
                                         
                                     </li> -->
-									<li><a href=""><img src="./<%= request.getContextPath() %>/assets/images/bell.png" alt=""></a></li>
-									<li><a href="./g2-cart.html"><img src="./<%= request.getContextPath() %>/assets/images/cart.png"
+									<li><a href=""><img src="./<%= request.getContextPath() %>/assets/images/bell.png"
+												alt=""></a></li>
+									<li><a href="./g2-cart.html"><img
+												src="./<%= request.getContextPath() %>/assets/images/cart.png"
 												alt=""></a>
 									</li>
-									<li><a href=""><img src="./<%= request.getContextPath() %>/assets/images/mail.png" alt=""></a></li>
+									<li><a href=""><img src="./<%= request.getContextPath() %>/assets/images/mail.png"
+												alt=""></a></li>
 									<li class="with-megamenu has-menu-child-item position-static mainmenu-sub">
 										<a href="./g2-register.html">登入 / 註冊
 											<!-- <i class="feather-chevron-down"></i> -->
@@ -1004,7 +1008,8 @@
 					<ul class="rbt-minicart-wrapper">
 						<li class="minicart-item">
 							<div class="thumbnail">
-								<a href="#"> <img src="<%= request.getContextPath() %>/assets/images/product/1.jpg" alt="Product Images">
+								<a href="#"> <img src="<%= request.getContextPath() %>/assets/images/product/1.jpg"
+										alt="Product Images">
 								</a>
 							</div>
 							<div class="product-content">
@@ -1023,7 +1028,8 @@
 
 						<li class="minicart-item">
 							<div class="thumbnail">
-								<a href="#"> <img src="<%= request.getContextPath() %>/assets/images/product/7.jpg" alt="Product Images">
+								<a href="#"> <img src="<%= request.getContextPath() %>/assets/images/product/7.jpg"
+										alt="Product Images">
 								</a>
 							</div>
 							<div class="product-content">
@@ -1042,7 +1048,8 @@
 
 						<li class="minicart-item">
 							<div class="thumbnail">
-								<a href="#"> <img src="<%= request.getContextPath() %>/assets/images/product/3.jpg" alt="Product Images">
+								<a href="#"> <img src="<%= request.getContextPath() %>/assets/images/product/3.jpg"
+										alt="Product Images">
 								</a>
 							</div>
 							<div class="product-content">
@@ -1061,7 +1068,8 @@
 
 						<li class="minicart-item">
 							<div class="thumbnail">
-								<a href="#"> <img src="<%= request.getContextPath() %>/assets/images/product/4.jpg" alt="Product Images">
+								<a href="#"> <img src="<%= request.getContextPath() %>/assets/images/product/4.jpg"
+										alt="Product Images">
 								</a>
 							</div>
 							<div class="product-content">
@@ -1145,7 +1153,8 @@
 							<!-- <a href="#"><div class="third-login"> <img src="https://cdn1.iconfinder.com/data/icons/google-s-logo/150/Google_Icons-09-512.png" alt=""> 使用Google登入</div></a>
                             <hr class="hr"> -->
 
-							<form class="max-width-auto" method="post" action="<%= request.getContextPath() %>/user_controller">
+							<form class="max-width-auto" method="post"
+								action="<%= request.getContextPath() %>/user_controller">
 								<input type="hidden" name="requestType" value="userLogin">
 								<div class="form-group">
 									<input name="u_email" type="email" required />
@@ -1329,7 +1338,7 @@
 					return re.test(email);
 				}
 			});
-		</script>		
+		</script>
 
 		<!-- ======================================== -->
 
@@ -1343,9 +1352,15 @@
 					});
 				</script>
 				<% } %>
+<!-- 若是未登入被Filter跳轉的通知 -->
+		<% if(request.getParameter("error") !=null) { %>
+				<script>
+					alert('<%= request.getParameter("error") %>');
+				</script>
+						<% } %>
 
 
-					<!-- ======================================== -->
+							<!-- ======================================== -->
 
 
 	</body>
