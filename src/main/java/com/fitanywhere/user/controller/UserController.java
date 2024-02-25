@@ -190,7 +190,7 @@ public class UserController extends HttpServlet {
 
 			HttpSession newSession = request.getSession(true); // 創建新的Session
 //	        寫入基礎會員資訊(依據資料庫)
-			newSession.setAttribute("uID", user.getuID());
+			newSession.setAttribute("uID", user.getuId());
 			newSession.setAttribute("uNickname", user.getuNickname());
 			newSession.setAttribute("uCoach", user.getuCoach());
 			newSession.setAttribute("uStatus", user.getuStatus());

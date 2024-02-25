@@ -19,7 +19,7 @@ public class UserVO {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "u_id")
-	private Integer uID;
+	private Integer uId;
 
 	@Column(name = "mood_id")
 	private Integer moodId;
@@ -50,7 +50,7 @@ public class UserVO {
 	@Column(name = "u_gender")
 	private Integer uGender;
 //	0 = 男; 1 = 女; 2 = 其他;
-
+	
 	@Column(name="u_headshot",columnDefinition = "longblob")
 	private byte[] uHeadshot;
 
@@ -73,12 +73,12 @@ public class UserVO {
 	}
 
 	// Getters and setters 
-	public Integer getuID() {
-		return uID;
+	public Integer getuId() {
+		return uId;
 	}
 
-	public void setuID(Integer uID) {
-		this.uID = uID;
+	public void setuId(Integer uId) {
+		this.uId = uId;
 	}
 
 	public Integer getMoodId() {
@@ -193,4 +193,27 @@ public class UserVO {
 		this.cIntro = cIntro;
 	}
 
+	public UserVO(Integer uId, Integer moodId, String uNickname, String uName, String uMail, String uPassword,
+			String uPhone, Integer uVerified, Integer uCoach, Integer uGender, Integer uAge, byte[] uHeadshot,
+			Date uBirth, Integer uStatus, String cIntro) {
+		super();
+		this.uId = uId;
+		this.moodId = moodId;
+		this.uNickname = uNickname;
+		this.uName = uName;
+		this.uMail = uMail;
+		this.uPassword = uPassword;
+		this.uPhone = uPhone;
+		this.uVerified = uVerified;
+		this.uCoach = uCoach;
+		this.uGender = uGender;
+		this.uHeadshot = uHeadshot;
+		this.uBirth = uBirth;
+		this.uStatus = uStatus;
+		this.cIntro = cIntro;
+	}
 }
+	
+
+	
+

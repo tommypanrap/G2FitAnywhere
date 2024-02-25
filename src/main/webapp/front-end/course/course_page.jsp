@@ -47,10 +47,17 @@
 </c:if>
 
 <ul>
-  <li><a href='listAllCourse.jsp'>List</a> all Course    <h4>(byDAO).         </h4></li>
+  <li>
+  <FORM METHOD="post" ACTION="<%= request.getContextPath()%>/front-end/course/course.do" >
+        <b>所有課程 :</b>
+        <input type="hidden" name="action" value="getAll">
+        <input type="submit" value="搜尋">                 
+    </FORM>
+    </li>
+  <!-- <a href='list_all_course.jsp'>List</a> all Course   <h4>         </h4></li> -->
   
  <li>
-    <FORM METHOD="post" ACTION="course.do" >
+    <FORM METHOD="post" ACTION="<%= request.getContextPath()%>/front-end/course/course.do" >
         <b>輸入課程ID :</b>
         <input type="text" name="crId">
         <input type="hidden" name="action" value="getOneCourse">
@@ -58,19 +65,11 @@
     </FORM>
   </li>
   
-  <!-- <li>
-    <FORM METHOD="post" ACTION="user.do" name="form1">
-        <b>輸入用戶ID (如101):</b>
-        <input type="text" name="uId">
-        <input type="hidden" name="action" value="getOneForDisplay">
-        <input type="submit" value="送出" onclick="fun1()">  <h4>(資料格式驗證  by Java Script).</h4> 
-    </FORM>
-  </li> -->
 
-<%--   <jsp:useBean id="coursehibernate" scope="page" class="com.fitanywhere.course.model.CourseHibernate" /> --%>
+<jsp:useBean id="coursehibernate" scope="page" class="com.fitanywhere.course.model.CourseDAOImpl" />
    
   <li>
-     <FORM METHOD="post" ACTION="course.do" >
+     <FORM METHOD="post" ACTION="<%= request.getContextPath() %>/front-end/course/course.do" >
        <b>選擇課程ID:</b>
        <select size="1" name="crId">
          <c:forEach var="courseVO" items="${coursehibernate.all}" > 
@@ -83,7 +82,7 @@
   </li>
   
   <li>
-     <FORM METHOD="post" ACTION="course.do" >
+     <FORM METHOD="post" ACTION="$<%= request.getContextPath() %>/front-end/course/course.do" >
        <b>選擇課程名字:</b>
        <select size="1" name="crId">
          <c:forEach var="courseVO" items="${coursehibernate.all}" > 
@@ -94,6 +93,12 @@
        <input type="submit" value="送出">
      </FORM>
   </li>
+</ul>
+
+<h3>課程管理</h3>
+
+<ul>
+  <li><a href='add_course.jsp'>新增課程測試</a></li>
 </ul>
 
 

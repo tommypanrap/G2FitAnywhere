@@ -122,6 +122,35 @@ public class CourseVO implements Serializable{
 
 
 
+	public CourseVO(Integer uId, String crClass, Integer crState, String crTitle, String crSubtitle,
+			String crIntro, byte[] crCover, Integer crPrice, Timestamp crCreateDate, Timestamp crEditDate,
+			Integer crCmQuan, Integer crTotStar, String crPurpose1, String crPurpose2, String crPurpose3, String crPre,
+			String crTarget1, String crHelloMsg, String crCong, String crLevel) {
+		super();
+		this.uId = uId;
+		this.crClass = crClass;
+		this.crState = crState;
+		this.crTitle = crTitle;
+		this.crSubtitle = crSubtitle;
+		this.crIntro = crIntro;
+		this.crCover = crCover;
+		this.crPrice = crPrice;
+		this.crCreateDate = crCreateDate;
+		this.crEditDate = crEditDate;
+		this.crCmQuan = crCmQuan;
+		this.crTotStar = crTotStar;
+		this.crPurpose1 = crPurpose1;
+		this.crPurpose2 = crPurpose2;
+		this.crPurpose3 = crPurpose3;
+		this.crPre = crPre;
+		this.crTarget1 = crTarget1;
+		this.crHelloMsg = crHelloMsg;
+		this.crCong = crCong;
+		this.crLevel = crLevel;
+	}
+
+
+
 	@Override
 	public String toString() {
 		return "CourseVO [crId=" + crId + ", uId=" + uId + ", crClass=" + crClass + ", crStatus=" + crState

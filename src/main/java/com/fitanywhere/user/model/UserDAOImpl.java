@@ -30,7 +30,7 @@ public class UserDAOImpl implements UserDAO {
 			// 提交transaction
 			transaction.commit();
 
-			System.out.println("註冊成功, 會員 ID: " + user.getuID());
+			System.out.println("註冊成功, 會員 ID: " + user.getuId());
 			return user; // 返回包含生成的 u_id 的 user 對象
 		} catch (Exception e) {
 			if (transaction != null) {
