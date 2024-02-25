@@ -6,7 +6,7 @@ import java.util.Set;
 
 public class AnnouncementService {
 
-	AnnouncementHibernateDAOImpl announcementhibernate = new AnnouncementHibernateDAOImpl();
+	AnnouncementDAOImpl announcementhibernate = new AnnouncementDAOImpl();
 	
 //	public AnnouncementVO addAnn(Integer crid, Timestamp anDate, Timestamp anEditDate, String anTitle, String anContent) {
 //		AnnouncementVO announcementVO = new AnnouncementVO();

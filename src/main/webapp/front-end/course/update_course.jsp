@@ -44,7 +44,7 @@
 <table id="table-1">
 	<tr><td>
 		 <h3>課程資料修改</h3>
-		 <h4><a href="course_page.jsp"><img src="images/back1.gif" width="100" height="32" border="0">回首頁</a></h4>
+		 <h4><a href="<%= request.getContextPath() %>/front-end/course/course_page.jsp"><img src="images/back1.gif" width="100" height="32" border="0">回首頁</a></h4>
 	</td></tr>
 </table>
 
@@ -106,7 +106,7 @@
 			</tr>
 			<tr>
 				<td>課程封面縮圖:</td>
-				<td><input type="TEXT" name="crCover"
+				<td><input type="file" name="crCover"
 					value="${param.crCover}" size="45" /></td>
 <%-- 				<td>${errorMsgs.crCover}</td> --%>
 			</tr>

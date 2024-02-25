@@ -60,7 +60,7 @@
     </FORM>
   </li>
 
-  <jsp:useBean id="announcementHibernate" scope="page" class="com.fitanywhere.announcement.model.AnnouncementHibernateDAOImpl" />
+  <jsp:useBean id="announcementHibernate" scope="page" class="com.fitanywhere.announcement.model.AnnouncementDAOImpl" />
    
   <li>
      <FORM METHOD="post" ACTION="announcement.do" >

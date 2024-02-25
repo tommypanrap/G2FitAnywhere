@@ -47,10 +47,17 @@
 </c:if>
 
 <ul>
-  <li><a href='list_all_course.jsp'>List</a> all Course   <h4>         </h4></li>
+  <li>
+  <FORM METHOD="post" ACTION="<%= request.getContextPath()%>/front-end/course/course.do" >
+        <b>所有課程 :</b>
+        <input type="hidden" name="action" value="getAll">
+        <input type="submit" value="搜尋">                 
+    </FORM>
+    </li>
+  <!-- <a href='list_all_course.jsp'>List</a> all Course   <h4>         </h4></li> -->
   
  <li>
-    <FORM METHOD="post" ACTION="course.do" >
+    <FORM METHOD="post" ACTION="<%= request.getContextPath()%>/front-end/course/course.do" >
         <b>輸入課程ID :</b>
         <input type="text" name="crId">
         <input type="hidden" name="action" value="getOneCourse">
@@ -59,10 +66,10 @@
   </li>
   
 
-<jsp:useBean id="coursehibernate" scope="page" class="com.fitanywhere.course.model.CourseHibernateImpl" />
+<jsp:useBean id="coursehibernate" scope="page" class="com.fitanywhere.course.model.CourseDAOImpl" />
    
   <li>
-     <FORM METHOD="post" ACTION="course.do" >
+     <FORM METHOD="post" ACTION="<%= request.getContextPath() %>/front-end/course/course.do" >
        <b>選擇課程ID:</b>
        <select size="1" name="crId">
          <c:forEach var="courseVO" items="${coursehibernate.all}" > 
@@ -75,7 +82,7 @@
   </li>
   
   <li>
-     <FORM METHOD="post" ACTION="course.do" >
+     <FORM METHOD="post" ACTION="$<%= request.getContextPath() %>/front-end/course/course.do" >
        <b>選擇課程名字:</b>
        <select size="1" name="crId">
          <c:forEach var="courseVO" items="${coursehibernate.all}" > 

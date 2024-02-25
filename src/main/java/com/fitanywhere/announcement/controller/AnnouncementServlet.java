@@ -18,6 +18,8 @@ import com.fitanywhere.announcement.model.AnnouncementVO;
 @WebServlet("/front-end/announcement/announcement.do")
 public class AnnouncementServlet extends HttpServlet {
 
+	private static final long serialVersionUID = 1L;
+
 	public void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		doPost(req, res);
 	}

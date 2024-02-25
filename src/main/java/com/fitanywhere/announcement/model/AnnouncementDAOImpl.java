@@ -8,7 +8,7 @@ import org.hibernate.SessionFactory;
 import com.fitanywhere.course.model.CourseVO;
 import com.fitanywhere.util.HibernateUtil;
 
-public class AnnouncementHibernateDAOImpl implements AnnouncementDAO{
+public class AnnouncementDAOImpl implements AnnouncementDAO{
 
 	@Override
 	public void insert(AnnouncementVO announcementVO) {

@@ -7,7 +7,7 @@ import org.hibernate.SessionFactory;
 
 import com.fitanywhere.util.HibernateUtil;
 
-public class CourseHibernateImpl implements CourseHibernate {
+public class CourseDAOImpl implements CourseDAO {
 
 //	public static void main(String[] args) {
 //		SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
@@ -109,6 +109,27 @@ public class CourseHibernateImpl implements CourseHibernate {
 			}
 		}
 		return list;
+	}
+
+	@Override
+	public void delete(Integer crId) {
+		// TODO Auto-generated method stub
+		SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
+		Session session = sessionFactory.getCurrentSession();
+		CourseVO courseVO = null;
+		
+		try {
+			session.beginTransaction();
+			courseVO = session.get(CourseVO.class, crId);
+			session.delete(courseVO);
+			session.getTransaction().commit();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			if (session.getTransaction() != null) {
+				session.getTransaction().rollback();
+			}
+		}
 	}
 	
 

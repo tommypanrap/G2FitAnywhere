@@ -8,15 +8,13 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
     
 <%
-CourseService cSvc = new CourseService();
-List<CourseVO> list = cSvc.getAll();
-pageContext.setAttribute("list", list);
+List<CourseVO> list = (List<CourseVO>)(request.getAttribute("list"));
 %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>所有課程資料</title>
+<title>課程資料</title>
 <style>
 table#table-1 {
 	background-color: #CCCCFF;
@@ -60,7 +58,7 @@ th, td {
 			<td>
 				<h3>所有課程資料</h3>
 				<h4>
-					<a href="course_page.jsp"><img src="images/back1.gif"
+					<a href="<%= request.getContextPath() %>/front-end/course/course_page.jsp"><img src="images/back1.gif"
 						width="100" height="32" border="0">回首頁</a>
 				</h4>
 			</td>
@@ -123,11 +121,9 @@ th, td {
 			<td>${courseVO.crHelloMsg}</td>
 			<td>${courseVO.crCong}</td>
 			<td>${courseVO.crLevel}</td>
-			<%
-    String contextPath = request.getContextPath();
-%>
+
 				<td>
-					<FORM METHOD="post" ACTION="course.do" style="margin-bottom: 0px;"
+					<FORM METHOD="post" ACTION="<%= request.getContextPath() %>/front-end/course/course.do" style="margin-bottom: 0px;" 
 						enctype="multipart/form-data">
 						<input type="submit" value="修改"> <input type="hidden"
 							name="crId" value="${courseVO.crId}"> <input type="hidden"
@@ -135,9 +131,9 @@ th, td {
 					</FORM>
 				</td>
 				<td>
-					<FORM METHOD="post" ACTION="course.do" style="margin-bottom: 0px;">
+					<FORM METHOD="post" ACTION="<%= request.getContextPath() %>/front-end/course/course.do" style="margin-bottom: 0px;">
 						<input type="submit" value="刪除"> <input type="hidden"
-							name="uId" value="${courseVO.crId}"> <input type="hidden"
+							name="crId" value="${courseVO.crId}"> <input type="hidden"
 							name="action" value="delete">
 					</FORM>
 				</td>

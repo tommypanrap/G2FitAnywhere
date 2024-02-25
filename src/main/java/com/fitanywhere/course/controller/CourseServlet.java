@@ -4,6 +4,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.sql.Timestamp;
+import java.util.LinkedHashMap;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -448,6 +449,35 @@ public class CourseServlet extends HttpServlet {
 
 			String url = "/front-end/course/list_all_course.jsp";
 			RequestDispatcher successView = req.getRequestDispatcher(url); // 新增成功後轉交listAllEmp.jsp
+			successView.forward(req, res);
+		}
+		if ("delete".equals(action)) { 
+			List<String> errorMsgs = new LinkedList<>();
+			req.setAttribute("errorMsgs", errorMsgs);
+
+			/*************************** 1.接收請求參數 ***************************************/
+			Integer crId = Integer.valueOf(req.getParameter("crId"));
+			System.out.println(crId);
+			/*************************** 2.開始刪除資料 ***************************************/
+			CourseService cSvc = new CourseService();
+			cSvc.deleteCourse(crId);
+			List<CourseVO> list = cSvc.getAll();
+			req.setAttribute("list", list);
+
+			String url = "/front-end/course/list_all_course.jsp";
+			RequestDispatcher successView = req.getRequestDispatcher(url);// 刪除成功後,轉交回送出刪除的來源網頁
+			successView.forward(req, res);
+		}
+		if ("getAll".equals(action)) { 
+			List<String> errorMsgs = new LinkedList<>();
+			req.setAttribute("errorMsgs", errorMsgs);
+
+			CourseService cSvc = new CourseService();
+			List<CourseVO> list = cSvc.getAll();
+			req.setAttribute("list", list);
+
+			String url = "/front-end/course/list_all_course.jsp";
+			RequestDispatcher successView = req.getRequestDispatcher(url);// 刪除成功後,轉交回送出刪除的來源網頁
 			successView.forward(req, res);
 		}
 	}

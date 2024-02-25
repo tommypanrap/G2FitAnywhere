@@ -53,7 +53,7 @@ th, td {
 			</td>
 			<td>
 				<h4>
-					<a href="course_page.jsp"><img src="images/add" width="100"
+					<a href="<%=request.getContextPath()%>/front-end/course/course_page.jsp"><img src="images/add" width="100"
 						height="100" border="0">回首頁</a>
 				</h4>
 			</td>
@@ -73,7 +73,7 @@ th, td {
 		</ul>
 	</c:if>
 
-	<FORM METHOD="post" ACTION="course.do" name="form1"
+	<FORM METHOD="post" ACTION="${request.contextPath}/course/course.do" name="form1"
 		enctype="multipart/form-data">
 <table>
     <%-- <tr>
