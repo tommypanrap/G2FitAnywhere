@@ -18,7 +18,7 @@ public class AnnouncementDAOImpl implements AnnouncementDAO{
 		
 		try {
 			session.beginTransaction();
-			session.save(announcementVO).toString();
+			session.save(announcementVO);
 			session.getTransaction().commit();
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
