@@ -275,19 +275,6 @@ public class CourseServlet extends HttpServlet {
 			List<String> errorMsgs = new LinkedList<>();
 			req.setAttribute("errorMsgs", errorMsgs);
 			
-//			Integer crId;
-//			crId = Integer.valueOf(req.getParameter("crId"));
-//			try {
-//			} catch (NumberFormatException e) {
-//				errorMsgs.put("uId", "用戶ID請填數字");
-//			}
-//			String uIdReg = "^[0-9]+$";
-//			if (uId == null || req.getParameter("uId") == null) {
-//				errorMsgs.put("uId", "用戶ID: 請勿空白");
-//			}
-//				else if((uIdReg)) { //以下練習正則(規)表示式(regular-expression)
-//					errorMsgs.put("ename","用戶ID: 只能是數字");
-//	            }
 			Integer uId;
 			uId = Integer.valueOf(req.getParameter("uId"));
 //			try {

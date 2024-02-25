@@ -13,7 +13,20 @@ public class AnnouncementDAOImpl implements AnnouncementDAO{
 	@Override
 	public void insert(AnnouncementVO announcementVO) {
 		// TODO Auto-generated method stub
+		SessionFactory sessionfactory = HibernateUtil.getSessionFactory();
+		Session session = sessionfactory.getCurrentSession();
 		
+		try {
+			session.beginTransaction();
+			session.save(announcementVO);
+			session.getTransaction().commit();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			if (session.getTransaction() != null) {
+				session.getTransaction().rollback();
+			}
+		}
 	}
 
 	@Override
