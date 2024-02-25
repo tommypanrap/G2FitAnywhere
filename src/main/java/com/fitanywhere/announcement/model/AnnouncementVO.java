@@ -1,5 +1,9 @@
 package com.fitanywhere.announcement.model;
 
+
+
+
+
 import java.sql.Timestamp;
 
 import javax.persistence.Column;
@@ -11,12 +15,17 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "announcement")
+
 public class AnnouncementVO {
+
+
+
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "an_id")
 	private Integer anId;
+
 
 	@Column(name = "cr_id ")
 	private Integer crId;
@@ -39,6 +48,8 @@ public class AnnouncementVO {
 	}
 
 	public AnnouncementVO(Integer anId, Integer crId, Timestamp anDate, Timestamp anEditDate, String anTitle, String anContent) {
+
+
 		super();
 		this.anId = anId;
 		this.crId = crId;
@@ -47,6 +58,11 @@ public class AnnouncementVO {
 		this.anTitle = anTitle;
 		this.anContent = anContent;
 	}
+
+
+
+
+
 
 	public Integer getAnId() {
 		return anId;
@@ -95,5 +111,9 @@ public class AnnouncementVO {
 	public void setAnContent(String anContent) {
 		this.anContent = anContent;
 	}
+
+
+
+
 
 }
