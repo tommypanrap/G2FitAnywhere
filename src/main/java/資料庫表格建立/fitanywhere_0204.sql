@@ -146,17 +146,16 @@ CREATE TABLE detail(
 
 -- 課程詳細資料(course_detail)
 CREATE TABLE course_detail (
-    cd_id INT PRIMARY KEY,
+    cd_id INT AUTO_INCREMENT PRIMARY KEY,
     cr_id INT,
-    cd_video LONGBLOB,
-    cd_sale_video LONGBLOB,
-    cd_url VARCHAR(255),
+    cd_video LONGTEXT,
+    cd_sale_video LONGTEXT,
     cd_pdf LONGBLOB,
     CONSTRAINT fk_course_detail FOREIGN KEY (cr_id) REFERENCES course(cr_id)
 );
-	INSERT INTO course_detail (cd_id, cr_id, cd_video, cd_sale_video, cd_url, cd_pdf)VALUES(1, 1, NULL, NULL, 'https://example.com/video1', NULL);
-    INSERT INTO course_detail (cd_id, cr_id, cd_video, cd_sale_video, cd_url, cd_pdf)VALUES(2, 2, '0x4578697374696e67', NULL, 'https://example.com/video2', NULL);
-    INSERT INTO course_detail (cd_id, cr_id, cd_video, cd_sale_video, cd_url, cd_pdf)VALUES(3, 3, '0x57656c636f6d6520746f20436f75727365', '0x53616c6520766964656f', 'https://example.com/video3', '0x5064662066696c6520666f72206c6174657220737461727473');
+	INSERT INTO course_detail (cd_id, cr_id, cd_video, cd_sale_video, cd_pdf)VALUES(1, 1, NULL, NULL, NULL);
+    INSERT INTO course_detail (cd_id, cr_id, cd_video, cd_sale_video, cd_pdf)VALUES(2, 2, '0x4578697374696e67', NULL, NULL);
+    INSERT INTO course_detail (cd_id, cr_id, cd_video, cd_sale_video, cd_pdf)VALUES(3, 3, '0x57656c636f6d6520746f20436f75727365', '0x53616c6520766964656f', '0x5064662066696c6520666f72206c6174657220737461727473');
 
 -- 最新消息(news)
 create table news(

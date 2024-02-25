@@ -24,6 +24,7 @@
 		<mapping class="com.fitanywhere.course.model.CourseVO"/>
 		<mapping class="com.fitanywhere.user.model.UserVO"/>
 		<mapping class="com.fitanywhere.announcement.model.AnnouncementVO"/>
+		<mapping class="com.fitanywhere.coursedetail.model.CourseDetailVO"/>
 		
 	</session-factory>
 </hibernate-configuration>
