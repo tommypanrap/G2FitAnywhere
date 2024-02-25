@@ -7,4 +7,3 @@ bin/
 .idea
 *.iml
 pom.xml
-src/main/resources/
