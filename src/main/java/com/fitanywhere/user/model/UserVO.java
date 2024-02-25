@@ -10,8 +10,6 @@ import javax.persistence.JoinColumn;
 import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-
-import java.util.Arrays;
 import java.util.Date;
 
 @Entity
@@ -53,9 +51,6 @@ public class UserVO {
 	private Integer uGender;
 //	0 = 男; 1 = 女; 2 = 其他;
 	
-//	@Column(name = "u_age")
-//	private Integer uAge;
-
 	@Column(name="u_headshot",columnDefinition = "longblob")
 	private byte[] uHeadshot;
 
@@ -65,9 +60,9 @@ public class UserVO {
 	@Column(name = "u_status")
 	private Integer uStatus;
 //	0 = 正常會員; 1 = 帳號關閉; 
-//
-//	@Column(name = "u_registerdate")
-//	private Date uRegisterdate;
+
+	@Column(name = "u_registerdate")
+	private Date uRegisterdate;
 
 	@Column(name = "c_intro")
 	private String cIntro;
@@ -77,6 +72,7 @@ public class UserVO {
 		// Default constructor
 	}
 
+	// Getters and setters 
 	public Integer getuId() {
 		return uId;
 	}
@@ -157,14 +153,6 @@ public class UserVO {
 		this.uGender = uGender;
 	}
 
-//	public Integer getuAge() {
-//		return uAge;
-//	}
-//
-//	public void setuAge(Integer uAge) {
-//		this.uAge = uAge;
-//	}
-
 	public byte[] getuHeadshot() {
 		return uHeadshot;
 	}
@@ -187,6 +175,14 @@ public class UserVO {
 
 	public void setuStatus(Integer uStatus) {
 		this.uStatus = uStatus;
+	}
+
+	public Date getuRegisterdate() {
+		return uRegisterdate;
+	}
+
+	public void setuRegisterdate(Date uRegisterdate) {
+		this.uRegisterdate = uRegisterdate;
 	}
 
 	public String getcIntro() {
@@ -216,16 +212,8 @@ public class UserVO {
 		this.uStatus = uStatus;
 		this.cIntro = cIntro;
 	}
-
-	@Override
-	public String toString() {
-		return "UserVO [uId=" + uId + ", moodId=" + moodId + ", uNickname=" + uNickname + ", uName=" + uName
-				+ ", uMail=" + uMail + ", uPassword=" + uPassword + ", uPhone=" + uPhone + ", uVerified=" + uVerified
-				+ ", uCoach=" + uCoach + ", uGender=" + uGender + ", uAge=" + ", uHeadshot="
-				+ Arrays.toString(uHeadshot) + ", uBirth=" + uBirth + ", uStatus=" + uStatus + ", cIntro=" + cIntro
-				+ "]";
-	}
+}
+	
 
 	
 
-}
