@@ -11,4 +11,11 @@ public interface UserDAO {
 	// 登入時以uMail查詢會員整筆資料(Hibernate限制)
 	UserVO loginVerification(String uMail);
 
+	// 寫入會員大頭照
+	void writeHeadshot(Integer userId, byte[] image);
+	
+	// 讀取會員大頭照
+	byte[] readHeadshot(Integer userId);
+
+
 }

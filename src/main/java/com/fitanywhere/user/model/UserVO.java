@@ -73,12 +73,12 @@ public class UserVO {
 	}
 
 	// Getters and setters 
-	public Integer getuID() {
+	public Integer getuId() {
 		return uId;
 	}
 
-	public void setuID(Integer uID) {
-		this.uId = uID;
+	public void setuId(Integer uId) {
+		this.uId = uId;
 	}
 
 	public Integer getMoodId() {

@@ -3,17 +3,19 @@ package com.fitanywhere.user.controller;
 import com.fitanywhere.user.model.UserService;
 import com.fitanywhere.user.model.UserVO;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import javax.servlet.http.Part;
+
 import java.io.IOException;
 import java.io.PrintWriter;
+
 import java.util.Date;
-import java.util.Enumeration;
+
 
 @WebServlet("/user_controller")
 public class UserController extends HttpServlet {
@@ -28,6 +30,9 @@ public class UserController extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		
+			
+		
 		// 設置請求和響應的字符編碼為UTF-8
 		request.setCharacterEncoding("UTF-8");
 		response.setCharacterEncoding("UTF-8");
@@ -39,6 +44,7 @@ public class UserController extends HttpServlet {
 //		});
 
 		String requestType = request.getParameter("requestType");
+		
 
 		if ("registerForm".equals(requestType)) {
 			holdRegisterForm(request, response);
@@ -64,10 +70,11 @@ public class UserController extends HttpServlet {
 //	            System.out.println(attributeName + ": " + session.getAttribute(attributeName));
 //	        }
 //	    } else {
-//	        System.out.println("原定在登入後寫入會員Session的基本資料寫入失敗");
+//	        System.out.println("會員Session的基本資料寫入失敗");
 //	    }
 
 	}
+	
 
 //	==============================================
 
@@ -118,7 +125,7 @@ public class UserController extends HttpServlet {
 		userService.storeRegistrationData(session, uName, uNickname, uBirth, uPhone, uMail, uPassword, uGender);
 		// 生成亂數驗證碼返回並寫入Reids
 		String verificationCode = userService.setVerificationCodeInRedis(uMail);
-		// 將驗證碼繼送給會員
+		// 將驗證碼寄送給會員
 		userService.sendVerificationMail(uMail, verificationCode);
 
 //		本機測試驗證流程不使用實際驗證信時使用
@@ -249,7 +256,7 @@ public class UserController extends HttpServlet {
 
 			HttpSession newSession = request.getSession(true); // 創建新的Session
 //	        寫入基礎會員資訊(依據資料庫)
-			newSession.setAttribute("uID", user.getuID());
+			newSession.setAttribute("uId", user.getuId());
 			newSession.setAttribute("uNickname", user.getuNickname());
 			newSession.setAttribute("uCoach", user.getuCoach());
 			newSession.setAttribute("uStatus", user.getuStatus());

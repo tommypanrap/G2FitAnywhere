@@ -241,5 +241,16 @@ public class UserService {
 	}
 
 //  ==========================================
+	
+	// 寫入會員頭像
+	public void saveUserHeadshot(Integer uId, byte[] image) {
+	    userDAO.writeHeadshot(uId, image);
+	}
 
+	// 讀取會員頭像
+	public byte[] getUserHeadshot(Integer uId) {
+	    return userDAO.readHeadshot(uId);
+	}
+//  ==========================================
+	
 }

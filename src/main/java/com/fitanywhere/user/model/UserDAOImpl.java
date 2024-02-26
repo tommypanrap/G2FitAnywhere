@@ -30,7 +30,7 @@ public class UserDAOImpl implements UserDAO {
 			// 提交transaction
 			transaction.commit();
 
-			System.out.println("註冊成功, 會員 ID: " + user.getuID());
+			System.out.println("註冊成功, 會員 ID: " + user.getuId());
 			return user; // 返回包含生成的 u_id 的 user 對象
 		} catch (Exception e) {
 			if (transaction != null) {
@@ -78,6 +78,54 @@ public class UserDAOImpl implements UserDAO {
     }
 	
 //  ======================================================
+//  依據會員ID寫入大頭照
+	
+	@Override
+    public void writeHeadshot(Integer userId, byte[] image) {
+        Transaction transaction = null;
+        try (Session session = HibernateUtil.getSessionFactory().openSession()) {
+            transaction = session.beginTransaction();
+
+            UserVO user = session.get(UserVO.class, userId);
+            if (user != null) {
+                user.setuHeadshot(image);
+                session.update(user);
+                System.out.println("DAO處理寫入");
+            } else {
+                user = new UserVO();
+                user.setuId(userId);
+                user.setuHeadshot(image);
+                session.save(user);
+            }
+
+            transaction.commit();
+        } catch (Exception e) {
+            if (transaction != null) {
+                transaction.rollback();
+            }
+            e.printStackTrace();
+        }
+    }    
+	 
+//   ======================================================
+//   依據會員ID讀取大頭找
+
+	@Override
+    public byte[] readHeadshot(Integer userId) {
+        try (Session session = HibernateUtil.getSessionFactory().openSession()) {
+            UserVO user = session.get(UserVO.class, userId);
+            if (user != null) {
+            	 System.out.println("DAO處理讀取");
+                return user.getuHeadshot();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+	
+//  ======================================================
+//  
 
 
 }

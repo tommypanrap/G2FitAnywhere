@@ -9,7 +9,7 @@ public class MailUtil {
     private String host = "smtp.gmail.com";
     private String port = "587";
     private String userName = "fitanywhere2024@gmail.com";
-    private String password = "請上Trello中的User卡片取得"; // google信箱金鑰 不上github
+    private String password = "請Trello取得(USER)"; // google信箱金鑰 不上github
 
     // 使用預設設定的構造方法
     public MailUtil() {
