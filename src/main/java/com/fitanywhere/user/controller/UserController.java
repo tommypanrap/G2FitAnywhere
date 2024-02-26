@@ -26,7 +26,14 @@ public class UserController extends HttpServlet {
 		super();
 	}
 
-//	==============================================
+
+
+
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+		doPost(request,response);
+	}
+	
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
@@ -256,7 +263,9 @@ public class UserController extends HttpServlet {
 
 			HttpSession newSession = request.getSession(true); // 創建新的Session
 //	        寫入基礎會員資訊(依據資料庫)
+
 			newSession.setAttribute("uId", user.getuId());
+
 			newSession.setAttribute("uNickname", user.getuNickname());
 			newSession.setAttribute("uCoach", user.getuCoach());
 			newSession.setAttribute("uStatus", user.getuStatus());
